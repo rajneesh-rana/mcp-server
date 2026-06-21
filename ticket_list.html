@@ -1,0 +1,2055 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<title>BTSP</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<meta  http-equiv="Cache-Control" content="No-Cache,  no-store, must-revalidate"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<link rel="stylesheet" href="/b2t/javascript/jquery/jquery-ui-1.11.4/jquery-ui.css?v=100245">
+<link rel="stylesheet" href="/b2t/javascript/jquery/jqgrid/ui.jqgrid.css?v=94427">
+<link rel="stylesheet" href="/b2t/javascript/jquery/jui_pagination/jquery.jui_pagination.css?v=88908">
+<link rel="stylesheet" href="/b2t/javascript/jquery/multifile/jquery-filestyle.min.css?v=92914">
+<link rel="stylesheet" href="/b2t/css/jquery.mCustomScrollbar.css?v=96504"><!-- for scroll -->
+<link rel="stylesheet" href="/b2t/css/tsBasic.css?v=20250318">
+<link rel="stylesheet" href="/b2t/css/tsDefault.css?v=20240220">
+
+<script src="/b2t/javascript/util/underscore-min.js?v=87952"></script>
+<script src="/b2t/javascript/jquery/jquery-1.10.2.js?v=83492"></script>
+<script src="/b2t/javascript/jquery/jquery-ui-1.11.4/jquery-ui.js?v=97662"></script>
+<script src="/b2t/javascript/jquery/form/jquery.form.js?v=92472"></script>
+<script src="/b2t/javascript/jquery/multifile/jQuery.MultiFile.min.js?v=92529"></script>
+<script src="/b2t/javascript/jquery/multifile/jquery-filestyle.min.js?v=92913"></script>
+<script src="/b2t/javascript/jquery/monthpicker/jquery.mtz.monthpicker.js?v=94521"></script>
+<script src="/b2t/javascript/jquery/jquery-ui-1.11.4/jquery.mCustomScrollbar.concat.min.js?v=96505"></script>
+
+<script src="/b2t/javascript/util/jquery.paging.js"></script>
+<script src="/b2t/javascript/jquery/jqgrid/i18n/grid.locale-kr.js"></script>
+<script src="/b2t/javascript/jquery/jqgrid/jquery.jqGrid.src.js"></script>
+<script src="/b2t/javascript/jquery/jui_pagination/jquery.jui_pagination.js"></script>
+<script src="/b2t/javascript/jquery/jui_pagination/localization/en.js"></script>
+<script src="/b2t/javascript/jquery/blockUI/jquery.blockUI.js"></script>
+<script src="/b2t/javascript/jquery/form/autosize.min.js"></script>
+<script src="/b2t/javascript/jquery/fileDownload/fileDownload.js"></script>
+
+<script src="/b2t/javascript/util/moment-with-locales.min.js"></script>
+<script src="/b2t/javascript/util/angular-1.4.7/angular.min.js"></script>
+<script src="/b2t/javascript/util/angular-1.4.7/angular-animate.min.js"></script>
+<script src="/b2t/javascript/util/angular-1.4.7/angular-sanitize.min.js"></script>
+<script src="/b2t/javascript/util/ng-infinite-scroll.js"></script>
+<script src="/b2t/javascript/util/angular-local-storage.js"></script>
+<script src="/b2t/javascript/util/angucomplete-alt.min.js"></script>
+<script src="/b2t/javascript/util/zeroclipboard/ZeroClipboard.min.js"></script>
+
+<script src="/b2t/javascript/util/app.js?v=20200928094"></script>
+<script src="/b2t/javascript/util/directive.js?v=101530"></script>
+<script src="/b2t/javascript/util/service.js?v=20200928094"></script>
+<script src="/b2t/javascript/util/settingApp.js?v=102499"></script>
+<script src="/b2t/javascript/util/settingService.js?v=98559"></script>
+<script src="/b2t/javascript/module/b2t/ts/tsCommon.js?v=20241018"></script>
+
+<script src="/b2t/smarteditor/js/HuskyEZCreator.js?v=103359"></script>
+<!--
+<script src="/b2t/cafe/2.3.25/cafe_2.3.25.min.js"></script>
+-->
+<script type="text/javascript" src="/b2t/cafe/note/cafe_note.min.js?v=250516"></script>
+
+<!-- jquery validate -->
+<link rel="stylesheet" href="/b2t/javascript/jquery/validate/validate.css?v=103359">
+<script type="text/javascript" src="/b2t/javascript/com/addValidate.js?v=103359"></script>
+<script type="text/javascript" src="/b2t/javascript/jquery/validate/jquery.validate.js?v=103359"></script>
+
+<!-- harman bkwon81.kim add start -->
+<script src="/b2t/javascript/module/b2t/ts/tsCommon_ksp.js?v=20241008002"></script>
+<!-- harman bkwon81.kim add end -->
+
+<script>
+	var ctx = "/b2t";
+	var server ="btsp.samsunggsbn.com";
+	var port ="443";
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+	$(".topmenu_fold").click(function() {
+		$(".topmenu_spread_wrap").addClass("open");
+	});
+
+	$(".btn_spread_close").click(function() {
+		$(".topmenu_spread_wrap").removeClass("open");
+	});
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="root_wrap" ng-app="app" ng-cloak ng-controller='PageController'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta  http-equiv="Cache-Control" content="No-Cache,  no-store, must-revalidate"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+
+
+
+
+<!-- //topmenu -->
+<div class="topmenu_wrap">
+	<a href="#" class="topmenu_fold"><img
+		src="/b2t/images/btsp/icon_topmenu.png" alt="" /></a>
+	<div class="topmenu_spread_wrap">
+		<!-- 하위메뉴  열릴때 add class="open" -->
+		<h1>
+			<img src="/b2t/images/btsp/logo_top.jpg" alt="Samsung Business BTSP" />
+		</h1>
+		<button id="" class="btn_spread_close">
+			<img src="/b2t/images/btsp/btn_top_close.png" alt="close" />
+		</button>
+		<div class="topmenu">
+
+		<!--   snConversionPopUp();-->
+
+			<!-- <a href="/b2t">MobileCare</a> -->
+
+		</div>
+	</div>
+</div>
+<!-- topmenu// -->
+
+<!---------- //fixed_menu_left ---------->
+<div class="fixed_menu_left">
+	<!-- //Gnb -->
+	<div class="GnbWrap">
+		<ul>
+			<li><a href="#" onclick="goUrl(1);return false;" class="i01">Ticket</a></li>
+			<li><a href="#" onclick="goUrl(7);return false;" class="i06">Knowledge<br>Sharing</a></li>
+			
+			  
+			
+			  
+			
+			  
+			
+			  
+			
+
+			
+
+			
+				<li><a href="#" onclick="goUrl(2);return false;" class="i02">Downloads</a></li>
+				<li><a href="#" onclick="goUrl(3);return false;" class="i03" >Community</a></li>
+			
+			
+			
+				
+				
+					<li><a href="#" onclick="alert('You are not allowed to use this page');return false;" class="i04" >Market</a></li>
+				
+			
+			
+			
+
+		</ul>
+	</div>
+	<!-- Gnb// -->
+	<div class="bottWrap">
+	<!-- //spotmenu -->
+	<div class="spotmenu_wrap">
+		<a href="/b2t/main.do" class="home" data-tooltip-text="Home">home</a>
+		
+		<!-- sun.mi.lee 15.12.15 통합검색 아이콘 추가. -->
+		<!-- a href="/b2t/ts/search.do?method=searchMain" class="search" data-tooltip-text="Search" id="btnUnifiedSearch">search</a> -->
+
+		<a href="javascript:goUrl(9);" class="logout" data-tooltip-text="Logout"></a>
+	<!-- //myinfo -->
+	<div id="myinfo_wrap" class="myinfo_wrap">
+		<a href="#" class="myinfo_fold" data-tooltip-text="My Info"></a>
+		<div id="myinfoSpread" class="myinfo_spread_wrap"><!-- 하위메뉴  열릴때 add class="open" -->
+		<h1>MY INFO. <span><a href="#" onclick="goUrl(4);return false;" ><img src="/b2t/images/btsp/common/myinfo_icon.png" alt="My Profile" /></a></span></h1>
+			<a href="#" class="myinfo_arrow"><img src="/b2t/images/btsp/common/myinfo_arrow.png" alt="" /></a>
+			<button id="btnSpreadClose" class="btn_spread_close"><img src="/b2t/images/btsp/common/myinfo_close.png" alt="close" /></button>
+			<button id="btnSpreadClose" class="btn_spread_close infoClose"></button>
+			<div id ="myinformation" class="myinfomenu"></div>
+		</div>
+	</div>
+		<!-- myinfo// -->
+
+	</div>
+	<!-- spotmenu// -->
+	<!-- //setting -->
+	<div class="mainCon1">
+
+			<div class="conDiv">
+				<div id="reportDiv" class="con con1">
+					<a href="#">
+						<span class="tit"><img src="/b2t/images/btsp/common/setting_i01.png" alt=""/></span>
+						<span class="over">
+							<span class="txt1"><img src="/b2t/images/btsp/common/setting_i01_on.png" alt=""/></span>
+							<span class="txt2">Report</span>
+						</span>
+					</a>
+				</div>
+			</div>
+
+
+		<div class="conDiv">
+			<div id="settingDiv" class="con con2">
+				<a href="#">
+					<span class="tit"><img src="/b2t/images/btsp/common/setting_i02.png" alt=""/></span>
+					<span class="over">
+						<span class="txt1"><img src="/b2t/images/btsp/common/setting_i02_on.png" alt=""/></span>
+						<span class="txt2">Setting</span>
+					</span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- setting// -->
+	</div>
+</div>
+<!---------- fixed_menu_left// ---------->
+
+<script>
+
+function openPopupMessageSize(weight, height, message, func, closeModal) {
+	try { console.log("openPopupMessageHeight :" + height); } catch(e) {}
+	var html = "";
+	html += "<div id=\"popupMessage\" class=\"pop_inner_wrap no_tit\" style=\"width:"+weight+"px; height:"+height+"px; display:none;\">";
+	html += "	<div class=\"mes_wrap\">";
+	html += message;
+	html += "	</div>";
+	html += "	<div class=\"pop_inner_btn_wrap\">";
+	html += "		<button type=\"button\" class=\"confirmPopup btn_confirm\">Confirm</button>";
+	html += "	</div>";
+	html += "</div>";
+
+	$(html).appendTo("body");
+
+	try { console.log("openPopupMessageSize :" + html); } catch(e) {}
+	var option = {
+		layer:"popupMessage",
+		modal:$("#mask").is(":hidden") ? true : false,
+		confirmBtn:"confirmPopup",
+		func:func,
+		closeModal:closeModal
+	};
+
+	popupCenterLayer(option);
+}
+
+$(document).ready(function() {
+
+	var accessIdList = '[COMMON, SEC_EMP, B2T_STAFF, B2T_ADVANCED_VIEWER]';
+	
+	$("a").tooltip({
+		tooltipClass:"tooltip",
+		track:true,
+		position:{
+			my:"left top-0",
+			at:"right top"
+		},
+		show:{
+			effect:"fadeIn",
+			delay:100
+		},
+		hide:{
+			effect:"fadeOut",
+			delay:50
+		}
+	});
+	
+	var curUrl = location.href;
+	if(curUrl.indexOf("/ts/ticket") >= 0){
+		$("#btnUnifiedSearch").hide();
+	}
+
+	$(".mainCon1 .con a").each(function(q) {
+		$(this).hover(function() {
+			$(this).find(".over").stop(true, true).fadeIn('fast');
+		}, function() {
+			$(this).find(".over").stop(true, true).fadeOut('fast');
+		});
+	});
+
+	$("#reportDiv").click(function() {
+		window.location.href = '/b2t/ts/report/btspReport.do?method=ticketClosedStatusMonthly';
+	});
+
+	$("#settingDiv").click(function() {
+		
+		window.location.href = "/b2t/ts/admin/queueMgmt.do?method=queueMgmtList&menuId=N201511240335382006871_SWHQ";
+	});
+
+
+	$(".myinfo_fold").click(function() {
+		$("#myinformation").empty();
+		$.ajax({
+			type: 'get',
+			async : true,
+			url: '/b2t/login.do?method=getMyProfileInfo&menuKey=Y',
+			dataType : "json",
+			data  : null,
+			success: function(data){
+
+				var userInfo = data.jsonResult;
+				
+				if(userInfo != null){
+					var temp = "";
+					var telTemp = userInfo.attrs.TEL_NO2+"-"+userInfo.attrs.TEL_NO; 
+					var cellTemp =userInfo.attrs.TEL_NO2+"-"+userInfo.attrs.CELLPHONENO;
+
+					temp +="<ul>";
+					temp +="<li>";
+					temp +="<h3>Name</h3>";
+					temp +="<p>"+userInfo.attrs.USER_NM+"("+userInfo.attrs.USER_LOGIN_ID+")</p>";
+					temp +="</li>";
+					temp +="<li>";	
+					temp +="<h3>Phone</h3>";
+					temp +="<p>"+telTemp+"</p>";
+					temp +="</li>";
+					temp +="<li>";
+					temp +="<h3>CellPhone</h3>";
+					temp +="<p>"+cellTemp+"</p>";
+					temp +="</li>";
+					temp +="<li>";
+					temp +="<h3>E-mail</h3>";
+					temp +="<p>"+userInfo.attrs.USER_EMAIL+"</p>";
+					temp +="</li>";
+					temp +="<li>";
+					if(userInfo.attrs.SEC_EMP_YN == 'N'){
+						temp +="<h3>ACCOUNT NAME</h3><p>"+userInfo.attrs.ACCOUNT_NM+"</p>";
+					}else{
+						temp +="<h3>Subsidiary</h3><p>"+userInfo.attrs.SEC_ORG_ID+"</p>";
+					}
+					temp +="</li>";
+					temp +="<li>";
+					temp +="<h3>Country</h3>";
+					temp +="<p>"+userInfo.attrs.COUNTRY_CD+"</p>";
+					temp +="</li>";
+					temp +="</ul>";
+					
+					//팝업정보 세팅
+					$("#myinformation").html(temp);
+					//팝업오픈
+					$(".myinfo_spread_wrap").addClass("open");
+				}
+			},
+			error: function(data, status, err){
+				alert("An error occurred.");
+			}
+		});
+	
+	});
+
+	$(".btn_spread_close").click(function() {
+		$(".myinfo_spread_wrap").removeClass("open");
+	});
+
+});
+
+function goAlram() {
+	var alram = 
+		"BTSP Preventive Maintenance<br><br>" 
+		+"Please be advised that BTSP Preventive Maintenance has been scheduled as below.<br>"
+		+"The BTSP system will not be available during this time.<br>"
+		+"Preventive Maintenance time (Korean time:GMT+9)<br>"
+		+" ○ Start    :  2016/02/21(Sun)   08:00<br>"
+		+" ○ Finish  :  2016/02/21(Sun)   17:00<br><br>"
+		+"Posted by : BTSP Team";
+	openPopupMessageSize(590, 270, alram, null);
+	setTimeout('focusConfirm()', 1000);
+}
+
+function focusConfirm() {
+	$(".btn_confirm").focus();
+}
+
+
+function goLogin() {
+	//goAlram();
+	window.location.href = "/b2t/main.do?method=loginMain";
+	//window.location.href = "/b2t/index.jsp";
+}
+
+function goUrl(gubun) {
+	var url = "";
+	
+	if(4==gubun){
+		var httpPrefix = "";
+		var localDomain = "btsp.samsunggsbn.com";
+		
+		
+			httpPrefix = "https://"+ localDomain;
+		
+		
+		callUserProfilePage(httpPrefix);
+	} else{
+		if(1==gubun) {
+			url = "/b2t/ts/ticketView.do?method=page";
+			clearLastView();
+		} else if(2==gubun){
+			url = "/b2t/ts/contents/download.do?method=getDownloadSubMainPage";
+		} else if(3==gubun){	
+			url = "/b2t/ts/contents/community.do?method=getCommunitySubMainPage";
+		} else if(5==gubun) {
+			url = "/b2t/ts/contents/issue.do?method=getIssueListPage";
+		} else if(6==gubun) {
+			url = "/b2t/ts/contents/onsite.do?method=page";
+		} else if(7==gubun) {
+			//url = "/b2t/ts/contents/kedb.do?method=page";
+			url = "/b2t/ts/contents/kmdb.do?method=getKmdbNLListPage";		// 수정
+		} else if(9==gubun) {
+			url = "/b2t/login.do?method=logout";
+		}
+		
+		if(9==gubun){
+			 window.location.replace(url);
+		} else{
+			 window.location.href=url;
+		}
+	}
+}
+
+function snConversionPopup() {
+
+	//var param = "&licenseKey="+$("#detailLicense").val()+"&popup=I";
+	//var winUrl = '/b2t/mc/customization.do?method=getSNConversionPopupPage&'+param;
+	var winUrl = '/b2t/mc/deviceListManagement.do?method=getSNConversionPopupPage&';
+
+	cw=screen.availWidth;     //화면 넓이
+	ch=screen.availHeight;    //화면 높이
+	
+	sw=900;    //띄울 창의 넓이
+	sh=650;    //띄울 창의 높이
+	
+	ml=(cw-sw)/2;        //가운데 띄우기위한 창의 x위치
+	mt=(ch-sh)/2;         //가운데 띄우기위한 창의 y위치
+
+	window.open(winUrl,'win','width='+sw+',height='+sh+',top='+mt+',left='+ml+',resizable=no,scrollbars=yes');
+}
+
+//Setting
+$(function(){
+	jQuery(".mainCon1 .con a").each(function(q){
+		jQuery(this).hover(function(){
+			jQuery(this).find(".over").stop(true, true).fadeIn('fast');
+		}, function(){
+			jQuery(this).find(".over").stop(true, true).fadeOut('fast');
+		})
+	})
+})
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/b2t/javascript/highcharts/highcharts.js"></script>
+<script src="/b2t/javascript/highcharts/highcharts-more.js"></script>
+<script src="/b2t/javascript/highcharts/modules/solid-gauge.js"></script>
+
+<script src="/b2t/javascript/util/string.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* Resolution Report Approval 툴팁 글자수 길어지므로 padding 값을 재정의 함. 글자수를 더 늘리려면 툴팁이미지를 크게 만들어야 한다. */
+.tooltip.ui-tooltip {border:none; display:block; vertical-align:top; color:#fff; box-shadow:none; border-radius:0; margin-right:35px; margin-top:-20px; padding:4px 10px 4px 10px !important; background:url('/b2t/images/btsp/common/bg_tooltip.png') right 0 no-repeat;  white-space:nowrap; box-sizing:border-box;}
+.tooltip.ui-tooltip div {font-size:11px !important;}
+</style>
+<!----------- //creat new ticket ---------->
+<!-- 열릴때 add class="open" , 안보일때 add class="none" -->
+<div id="" class="creat_ticket_wrap close">
+	<div class="creat_ticket">
+		<span id="menuArrow" class="arrow open"></span>
+		<div class="creatWrap">
+			<div class="tl">
+				Ticket
+			</div>
+			<div class="left_btn">
+				<p>
+					<div class="advancedWrap">
+						<input type="text" class="inputTxt"  placeholder="Search Ticket ID" id="searchTicketId"  ng-keydown="$event.which === 13 && goTicketSearchByTicketId()"/>
+						<div class="searchBtn" ng-click="goTicketSearch('keyword')"></div>
+					</div>
+				</p>
+			</div>
+			<div class="left_btn">
+				<p>
+					<button type="button" class="btn_change"
+						ng-click="goTicketSearch('blank')">
+						Advanced Search
+					</button>
+				</p>
+			</div>
+			<div class="botm_btn">
+				<p>
+					<button type="button" class="btn_change" ng-click="goFavorite()">
+						My Bookmarks
+					</button>
+				</p>
+			</div>
+			
+			<div class="botm_btn" ng-if="Page.statusInfo.isNetworkUser">
+				<p>
+					<button type="button" class="btn_change" ng-click="goTask()">
+					My Task List
+					</button>
+					<span>{{Page.statusInfo.taskSize}}</span>
+				</p>
+			</div>
+			<div class="botm_btn" ng-if="Page.statusInfo.isNetworkUser">
+				<p>
+					<button type="button" class="btn_change" ng-click="goApproval()">
+						My Ticket Approval List
+					</button>
+					<span>{{Page.statusInfo.apprivalSize}}</span>
+				</p>
+			</div>
+		
+			<div class="botm_btn">
+			
+				
+				
+					<button type="button" class="btn_result" ng-click="goNewTicket('m')"><strong>Create New Ticket</strong></button>
+				
+			
+			</div>
+			<div class="viewSetWrap">
+				<div class="tl">
+					Views
+					<span class="sort" id="ticketViewSortPop"><a href="#" ng-click="ticketViewSortPop()">Create New Ticket</a></span>
+					<span class="refresh"><a href="#" ng-click="refreshViewStatus()">Refresh</a></span>
+					<span class="setting"><a href="#" ng-click="goViewSetup()">Setting</a></span>
+				</div>
+
+				<ul class="viewTextBox">
+					<li ng-repeat='view in Page.statusInfo.dataTicketStatus'
+						ng-click="callView($index)"><a href="#"
+						ng-class="{on:view.viewId==Page.currentViewId}" ng-Style="{color:(view.viewShareCd=='04')?'#7ab0f6':''}">{{view.viewNm}}<span>{{view.viewCnt}}</span></a>
+					</li>
+				</ul>
+
+					
+					<!-- 19.12.23 이계원 P 제거 요청 -->
+					<!--
+					<div class="left_btn" ng-if="Page.statusInfo.hasAuthorizationForRND">
+						<p>
+							<button type="button" class="btn_change" ng-click="goAllRndRequestList()">
+								PLM Request List
+							</button>
+						</p>
+					</div>
+					-->
+					<!-- 18.06.04 이계원 P 제거 요청 -->
+					<!-- 
+					<div class="botm_btn" ng-if="Page.statusInfo.isNetworkUser">
+						<p>
+							<button type="button" class="btn_change" ng-click="goCreateSW()">
+								SW Change Mgmt.
+							</button>
+							<span>{{Page.statusInfo.swSize}}</span>
+						</p>
+
+					</div>
+					 -->
+					<div class="botm_btn" ng-if="Page.statusInfo.isPrtUser">
+						<p>
+							<button type="button" class="btn_change" ng-click="goErrorCodeList()">
+								Error Code
+							</button>
+						</p>
+					</div>
+					<!-- 18.06.04 이계원 P 제거 요청 -->
+					
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!---------- //creat new ticket ---------->
+<!-- slider_right -->
+<!-- 없을때 add class="none" -->
+<div id="slider_right" class="slider_right">
+	<ul class="slidertext">
+		
+		<li class="i05">
+			<a href="#" id="bookmarkBtn" title="Bookmark"class="tooltip" ng-click="sliderBookmarkBtn()">
+				Bookmark
+			</a>
+		</li>
+		<!-- MOBILE : licenseKey OR MOBILE : Post-sales Support  -->
+		
+	</ul>
+</div>
+<!-- //slider_right -->
+
+<script>
+	$(document).ready(function() {
+		$("#tickets_Info1, #tickets_Info2").each(function(){
+			$(this).addClass("	ui-accordion ui-widget ui-helper-reset");
+		});
+
+		$("#tickets_Info1 > h2").each(function(index){
+			var panel = $(this).next();
+			$(this).addClass("contentHeader ui-accordion-header ui-state-default ui-corner-top ui-accordion-iconsui-accordion-header ui-state-default  ui-corner-top ui-accordion-iconsr");
+			panel.addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom");
+
+			var span = $("<span class='ui-accordion-header-icon ui-icon ui-icon-triangle-1-s'></span>");
+			span.appendTo($(this));
+			// Basic/Product/Site 모두 펼친 상태가 Default 로 수정
+			//if(index == 0){
+				$(this).addClass("ui-accordion-header-active ui-state-active");
+				panel.addClass("contentOpened");
+			//}else{
+			//	panel.hide();
+			//}
+		});
+
+		$("#tickets_Info2 > h2").each(function(index){
+			var panel = $(this).next();
+			$(this).addClass("contentHeader ui-accordion-header ui-state-default ui-corner-top ui-accordion-iconsui-accordion-header ui-state-default  ui-corner-top ui-accordion-iconsr ui-accordion-header-active ui-state-active");
+			panel.addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom");
+
+			var span = $("<span class='ui-accordion-header-icon ui-icon ui-icon-triangle-1-s'></span>");
+			span.appendTo($(this));
+		});
+
+		$(".contentHeader").click(function(){
+			var panel = $(this).next();
+			var activeHeaderClass = "ui-accordion-header-active ui-state-active";
+			if($(this).hasClass("ui-state-active")){
+				$(this).removeClass(activeHeaderClass);
+				panel.removeClass("contentOpened");
+				panel.hide();
+			}else{
+				$(this).addClass(activeHeaderClass);
+				panel.addClass("contentOpened");
+				panel.show();
+			}
+		}).mouseout(function(){
+			$(this).removeClass("ui-state-hover ");
+		}).mouseover(function(){
+			$(this).addClass("ui-state-hover ");
+		});
+
+		//세로 스크롤 컨텐츠를 위한 높이 조정
+		// - 푸터 height:43px, 하단 버튼 영역 height:100px
+		var winHeight = $(window).height();
+		$('.fl_L').css('height', winHeight - 57);
+		$('.contents_q').css('height', winHeight - 57);
+		$('.contents_c').css('height', winHeight - 57);
+		$('.fixed_ticket_left').css('height', winHeight - 57);
+		$('.spread_right').css('height', winHeight - 57);
+		$('.creat_ticket').css('height', winHeight - 57);
+		$('.creat_ticket_wrap').css('height', winHeight - 57);
+		$('.fixed_menu_left').css('height', winHeight);
+
+		$(window).resize(function() {
+			var reWinHeight = $(window).height();
+
+			$('.fl_L').css('height', reWinHeight - 57);
+			$('.contents_q').css('height', reWinHeight - 57);
+			$('.contents_c').css('height', reWinHeight - 57);
+			$('.fixed_ticket_left').css('height', reWinHeight - 57);
+			$('.spread_right').css('height', reWinHeight - 57);
+			$('.creat_ticket').css('height', reWinHeight - 57);
+			$('.creat_ticket_wrap').css('height', reWinHeight - 57);
+			$('.fixed_menu_left').css('height', reWinHeight);
+		});
+
+		$("#menuArrow").click(function() {
+			if ($(this).hasClass("open")) {
+				$(this).removeClass("open");
+				$(this).addClass("close");
+				$(".creat_ticket_wrap").removeClass("close");
+				$(".creat_ticket_wrap").addClass("open");
+				$(".contents_q.list").removeClass("close").addClass("open");
+
+			} else {
+				$(this).removeClass("close");
+				$(this).addClass("open");
+				$(".creat_ticket_wrap").removeClass("open");
+				$(".creat_ticket_wrap").addClass("close");
+				$(".contents_q.list").removeClass("open").addClass("close");
+
+			}
+		});
+
+		$("#macroSeqNo").selectmenu();
+		$("#macroSeqNo").selectmenu({
+			width : "200px",
+			position : {
+				my : "left bottom",
+				at : "left top"
+			},
+			change : function(event, ui) {
+				getTicketFormMacroValueList();
+			}
+		});
+		
+		var sessionUserId = "uDebWvoKyazD6yJN4Epp7wTAOGEETAOGEE";
+		if(sessionUserId != ""){
+			initPageViewList(sessionUserId);
+		}
+
+	});
+
+	function getTicketFormMacroValueList() {
+		if(isEmpty($("#macroSeqNo").val())) {
+			return;
+		}
+
+		$.ajax({
+			type:"post",
+			async:false,
+			url:getUrl("/ts/ticket.do?method=getTicketFormMacroValueList"),
+			dataType:"json",
+			data:{
+				seqNo:$("#macroSeqNo").val(),
+				ticketNo:$("#ticketNo").val()
+			},
+			cache:false,
+			contentType:"application/x-www-form-urlencoded;charset=utf-8",
+			beforeSend:function() {
+			},
+			complete:function() {
+			},
+			success:function(json) {
+				var result = json.result;
+				var message = json.message;
+
+				if(result == "0") {
+					var ticketFormMacroValueVOList = json.ticketFormMacroValueVOList;
+					var ticketFormMacroValueVOList2 = new Array();
+
+					$.each(ticketFormMacroValueVOList, function(index, ticketFormMacroValueVO) {
+						var fieldCd = ticketFormMacroValueVO.fieldCd;
+						var macroVal = ticketFormMacroValueVO.macroVal;
+						var macroValEtc = ticketFormMacroValueVO.macroValEtc;
+
+						//alert("fieldCd : " + fieldCd + ", macroVal : " + macroVal);//fieldCd : addCc, macroVal : UR-0133828 
+						
+
+						var field = $("#" + fieldCd);
+
+						if(field.length == 1 || checkCommonFieldYn(fieldCd)) {
+							if(fieldCd == "commentMode") {
+								if($("#commentType").length == 1) {
+									if($("button[name='commentType0']:eq(1)").is(":visible")) {
+										if(macroVal == "01") {
+											if(!$("button[name='commentType0']:eq(0)").hasClass("on")) {
+												$("button[name='commentType0']:eq(0)").trigger("click");
+											}
+										} else if(macroVal == "02") {
+											if(!$("button[name='commentType0']:eq(1)").hasClass("on")) {
+												$("button[name='commentType0']:eq(1)").trigger("click");
+											}
+										}
+									}
+								}
+							} else if(fieldCd == "ticketCommentText") {
+								
+								cafe.setContent("cafeDemo", macroVal);
+							} else if(checkMacroSetAvailable()) {
+								if(fieldCd == "addCc") {
+									if(addCc) {
+										addCc(macroVal, macroValEtc);
+									}
+								} else if(fieldCd == "addTags") {
+									$("#fullTagNm").val(macroVal);
+								} else {
+									if(fieldCd == "accountId") {
+										/* 공통에서 세팅 안함 */
+									} else if(field.hasClass("sel_block") && false) {	//FROG : selectmenu 반영시 false 삭제
+										field.val(macroVal);
+										field.selectmenu("refresh");
+									} else {
+										field.val(macroVal);
+									}
+								}
+							}
+						}
+
+						if(!checkCommonFieldYn(fieldCd)) {
+							ticketFormMacroValueVOList2.push(ticketFormMacroValueVO);
+						}
+					});
+
+					if(checkMacroSetAvailable() && setBizMacro) {
+						setBizMacro(ticketFormMacroValueVOList2);
+					}
+				} else {
+					alert(message);
+				}
+			},
+			error:function(request, status, error) {
+				alert(error);
+			}
+		});
+	}
+
+	function checkCommonFieldYn(fieldCd) {
+		if(fieldCd == "ticketCommentText" || fieldCd == "commentMode" || fieldCd == "priorityCd" || fieldCd == "addCc" || fieldCd == "addTags") {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function checkMacroSetAvailable() {
+		
+			
+			
+			
+				return false;
+			
+		
+	}
+
+	function openItemPanel(objId){
+		var panel = $("#" + objId).parent().parent().parent();
+		if(!panel.hasClass("contentOpened")){
+			panel.prev().trigger("click");
+		}
+	}
+
+	function closedPrdCreateFail(){
+		var message = "<p>Creating Mobile / VD / HA product related ticket is no longer</p>"
+			+"<p>available here.</p>"
+			+"<p>Please move to <a style=\"color:#328ede; \" href=\"https://sec-b2b.my.salesforce.com\" target=_blank><U>`Service Cloud</a>`</U></p>"
+			+"<p>&nbsp;</p>"
+			+"<p>Thanks. </p>";
+			openPopupMessageSize('430','190',message, function(){
+		});
+	}
+
+	function openPopupMessageSize(weight, height, message, func, closeModal) {
+		try { console.log("openPopupMessageHeight :" + height); } catch(e) {}
+		var html = "";
+		html += "<div id=\"popupMessage\" class=\"pop_inner_wrap no_tit\" style=\"width:"+weight+"px; height:"+height+"px; display:none; FONT-SIZE: 9pt;\">";
+		html += "	<div class=\"mes_wrap\">";
+		html += message;
+		html += "	</div>";
+		html += "	<div class=\"pop_inner_btn_wrap\">";
+		html += "		<button type=\"button\" class=\"confirmPopup btn_confirm\">Confirm</button>";
+		html += "	</div>";
+		html += "</div>";
+
+		$(html).appendTo("body");
+
+		try { console.log("openPopupMessageSize :" + html); } catch(e) {}
+
+		var option = {
+			layer:"popupMessage",
+			modal:$("#mask").is(":hidden") ? true : false,
+			confirmBtn:"confirmPopup",
+			func:func,
+			closeModal:closeModal
+		};
+
+		popupCenterLayer(option);
+	}
+</script>
+
+
+
+<style>
+tbody>tr.viewDataRow:hover  td {
+	background: #eeeeee;
+	cursor: pointer;
+}
+
+.view-head {
+	overflow: hidden;
+	white-space: nowrap;
+	height: 41px;
+}
+
+.view-head-slide {
+	overflow: hidden;
+	white-space: nowrap;
+	height: 42px;
+	width: 20000px;
+}
+
+.view-list {
+	overflow: auto;
+	/* border: 2px solid black; */
+}
+
+.view-item {
+	min-width: 160px;
+	/* max-width: 300px; */
+	/* overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; */
+}
+
+.view-item-title {
+	width: 300px;
+	word-wrap: break-word;
+}
+
+.table_list tr:hover {
+	cursor: default;
+}
+
+.table_list {
+	table-layout: auto;
+}
+
+.table_list th {
+	padding-left: 3px;
+	padding-right: 3px;
+	/* border: 1px solid gray; */
+}
+
+.table_list td {
+	padding-left: 3px;
+	padding-right: 3px;
+	max-width: 300px;
+	word-wrap: break-word;
+}
+
+.viewGroupRow td {
+	text-align: left;
+}
+
+.viewGroupRow td b {
+	font-size: 12px;
+	font-weight: bold;
+	margin-left:5px;
+	margin-right:3px;
+}
+
+.viewSetWrap img {
+	cursor: pointer;
+}
+
+.table_list div {
+	word-break: break-all;
+	white-space: normal;
+}
+.condition-text{
+	font-weight : normal;
+	font-size: 11px; 
+	display: inline-block; 
+	padding-top: 4px;
+	padding-right: 5px; 
+	color: #7d7d7d;
+	vertical-align: top;
+}
+
+.result-text{
+	font-weight : normal;
+	font-size: 12px; 
+	display: inline-block; 
+	padding-top: 4px;
+	padding-right: 5px; 
+	color: #7d7d7d;
+	vertical-align: top;
+}
+
+.grpMsgText{
+font-size:11px;
+border:1px solid #8C8C8C; 
+border-radius:5px; 
+font-weight: normal;
+padding:2px 7px 2px 7px;
+background-color:#8C8C8C; 
+color: white;}
+
+div.nws_wrap {text-align :left;}
+div.nws_wrap ul.nws_area {width:500px  !important;}
+div.nws_wrap ul.nws_area li{display:inline-block;}
+div.nws_wrap ul.nws_area li.text_area{width:190px !important;margin-right:20px}
+div.nws_wrap ul.nws_area li.img_area{width:280px}
+</style>
+
+<!---------- //contents start ---------->
+<!-- p일경우 class="contents_p" -->
+<!-- q일경우 class="contents_q" -->
+<div ng-controller='ViewController'>
+	<form id="viewListFrom" name="viewListFrom">
+		<input type="hidden" ng-value="Page.condition.groupNm" name="groupNm"  />
+	</form>
+	<div id="viewPage" class="contents_q list">
+		<div combine-horizontal-scrolls="hsync-scroll">
+			<div class="fl_L">
+
+				
+				<div ng-class="(pageType=='DASHBOARD')?'tl_2':'tl_1'" id="viewTitle" ng-show="pageType=='DASHBOARD'">
+					{{View.title|restoreXSS}}<img ng-show="View.isPageLoading" src="/b2t/images/btsp/ajax-loader.gif" />						
+					
+					<div class="gmtTxt">
+						<span class="txt">GMT</span>
+						<span class="blueTXT"> 8</span>&nbsp;&nbsp;
+						06/20/2026
+					</div>
+					
+				</div>
+				
+				
+				
+				<div class="ng-binding tl_1" id="viewListTitle" ng-show="pageType!='DASHBOARD'">
+					{{View.title|restoreXSS}}<img ng-show="View.isPageLoading" src="/b2t/images/btsp/ajax-loader.gif" />						
+					
+					<div class="resultTxt">
+						<span class="condition-text" style="margin-right:2px; color:#191919;font-size:12px;">{{View.totalCnt}}</span>
+					    <span class="result-text">tickets found</span>
+						<div style="float: right;">
+					    
+					    
+
+					    <span class="condition-text" ng-show="View.hasGroup" style="margin-left: 8px;"> Filter :: {{View.grpMsgNm|restoreXSS}}</span>
+    					<span  ng-show="View.hasGroup">
+							<select  id="groupNm" ng-model="Page.condition.groupNm"  style="width: 250px;"  >
+								<option value="">--Select All--</option>
+								<option ng-repeat="row in View.groupData"  value="{{row.colVal}}" >{{row.colNm|restoreXSS}}</option>
+							</select>
+						</span>
+						
+    		<!-- 			<span class="condition-text" style="margin-left: 8px;">Rows per Page</span> -->
+    					<span>
+	            			<select id="punit" name="punit"  style="width: 50px;">
+	                            <option value="10" >10</option>
+	                            <option value="15" >15</option>
+	                            <option value="30" >30</option>
+	                            <option value="50" >50</option>
+	                        </select>
+						</span>
+						
+					    <span  ng-show="View.data.length>0" class="condition-text" style="margin-left:10px;" >
+    						<button id="btnExcel" class="btn_ok"  style="vertical-align: middle;" type="button">Export CSV</button>
+    					</span>
+    					
+						</div>
+					</div>
+					
+				</div>
+				
+				
+				
+				<div ng-show="pageType=='DASHBOARD'">
+					<div class="staffBox">
+						<div class="left" ng-class="(View.pageRole!='STAFF')?'wid25':''">
+							<p class="staf_tl">Product Group</p>
+							<ul><li>System Network</li></ul>
+						</div>
+						<div class="left" ng-class="(View.pageRole!='STAFF')?'wid25':''">
+							<p class="staf_tl">Role</p>
+							<ul><li>Advanced Viewer</li><li>Staff</li></ul>
+						</div>
+						<div class="left" ng-show="View.pageRole=='STAFF'">
+							<p class="staf_tl">Queue</p>
+							<ul><li>SRIB Core - System Software</li>
+							</ul>
+						</div>
+						<div class="graphBox staf_r" ng-class="(View.pageRole!='STAFF')?'wid50':''">
+							
+								
+								
+									<div style="position:relative">
+																				
+											<div class="btnViewConfig" id="btnViewConfig" ng-show="pageType=='DASHBOARD'" ng-click="dashboardConfigtPop()"></div>
+										
+									</div>
+									<ul>
+										
+											
+												<li class="i01" ng-click="loadView(View.dashboard.open.viewIdEnc)">
+													<p class="number">{{View.dashboard.open.viewCount}}</p>
+													<p class="txt">OPEN</p>
+												</li>
+												<li class="i02" ng-click="loadView(View.dashboard.resolved.viewIdEnc)">
+													<p class="number">{{View.dashboard.resolved.viewCount}}</p>
+													<p class="txt">RESOLVED</p>
+												</li>
+												<li class="i03" ng-click="loadView(View.dashboard.closed.viewIdEnc)">
+													<p class="number">{{View.dashboard.closed.viewCount}}</p>
+													<p class="txt">CLOSED</p>
+												</li>
+											
+											
+										
+									</ul>
+								
+							
+						</div>
+					</div>
+					<div class="subMin_listBox">
+						<div class="f_l">
+							<p class="list_tl">
+								{{View.SubView1.title|restoreXSS}}<a href="#" class="more sb" ng-click="loadView(View.SubView1.viewId)"></a>
+							</p>
+							<ul>
+								<li ng-repeat="row in View.SubView1.list">
+									<span>{{row.ticketNoBase}}</span> 
+									<a href="#" ng-click="View.selectDashTicket(row,View.SubView1.viewId)">{{row.title|restoreXSS}}</a>
+									<p class="r_txt">{{row.lastUpdateDttm}}</p>
+								</li>
+							</ul>
+						</div>
+						<div class="f_r">
+							<p class="list_tl">{{View.SubView2.title|restoreXSS}} 
+								<a href="#" class="more sb" ng-click="loadView(View.SubView2.viewId)"></a>
+							</p>
+							<ul>
+								<li ng-repeat="row in View.SubView2.list">
+									<span>{{row.ticketNoBase}}</span> 
+									<a href="#" ng-click="View.selectDashTicket(row,View.SubView2.viewId)">{{row.title|restoreXSS}}</a>
+									<p class="r_txt">{{row.lastUpdateDttm}}</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+     
+				
+    			<div ng-hide="pageType=='DASHBOARD'">
+					
+					<div class="view-head  hsync-scroll">
+							<div class="view-head-slide">
+								<table class="table_list" ng-style="{'width': getHeadLength() + 'px'}">
+									<thead>
+										<tr ng-show="View.data.length>0">
+											<th ng-style="{'width':View.columnWidth[0]}"><span> <input type="checkbox" ng-model="View.ticketSelectAll" ng-change="ticketSelectAll()"></span></th>
+											<th ng-style="{'width':View.columnWidth[1]}"><span class="icon_question"><a href="#" id="ticketHelp04"><img src="/b2t/images/btsp/common/icon_question.png" alt=""></a></span></th>
+											<th ng-style="{'width':View.columnWidth[2]}"><span>&nbsp;</span></th>
+											<th ng-repeat='cols in View.header' ng-style="{'width':View.columnWidth[$index+3]}"><div>{{cols.fieldNm|restoreXSS}}</div></th>
+											<th><span style="width: 30px"></span></th>
+	
+										</tr>
+										<tr ng-show="View.data.length==0">
+											<th style=""><span style="width: 30px;">&nbsp;</span></th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+						
+						
+						
+						<div ng-show="View.data.length==0">
+							<table class="table_list">
+								<tbody>
+									<tr>
+										<td class="noData"><img ng-show="View.isPageLoading" src="/b2t/images/btsp/ajax-loader.gif" />
+											<div ng-hide="View.isPageLoading">
+												Not Found Data
+											</div></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						
+						
+						<div class="view-list   hsync-scroll" id="viewContent"  ng-show="View.data.length>0">
+							<div infinite-scroll-container="'#viewContent'" infinite-scroll-parent='true'	infinite-scroll-distance='0'>
+								<table class="table_list">
+									<tbody>
+										<tr class="viewGroupRow" ng-repeat-start='row in View.data' ng-if="row.groupSeq==1">
+											<td colspan='{{View.headerSize}}'>&nbsp;&nbsp;
+												<span class="grpMsgText">{{View.grpMsgNm|restoreXSS}}&nbsp;&nbsp;<strong>::</strong>&nbsp;&nbsp; {{row.grpBase|restoreXSS}}</span>
+												<span style="margin-left:5px;font-size:12px">
+												<b>Total</b>{{row.totalCnt}}
+												<b>Not Resolved</b>{{row.notResolvedCnt}}
+												<b>Resolved</b>{{row.resolvedCnt}}
+												<b>Closed</b>{{row.closedCnt}}
+												</span>
+											</td>
+										</tr>
+										<tr class="viewDataRow" ng-repeat-end>
+											<td>
+												<div>
+													<input type="checkbox" ng-model="row.isChecked" ng-change="setBookmarkBtnState()" ng-click="$event.stopPropagation()">
+												</div>
+											</td>
+											<td ng-click="View.selectTicket(row)" class="icon">
+												<img ng-src="{{row.statusIcon.src}}" alt="{{row.statusIcon.desc}}" title="{{row.statusIcon.desc}}" />
+											</td>
+											<td>
+												<div>
+													<img ng-show="row.favoriteYnBase=='Y'" src="/b2t/images/btsp/ico_b.gif" alt="Bookmark" title="Bookmark" />
+												</div>
+											</td>
+											<td ng-click="View.selectTicket(row)" ng-repeat='col in row.cols' class="{{col.align}}">
+												<div ng-class="(col.field!='title')?'view-item':'view-item-title'" title='{{col.data}}'>{{col.data|restoreXSS}}</div>
+											</td>
+											<td>
+												<div style="width: 30px">&nbsp;</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						
+							
+						
+						<div class="pagingwrap2"  ng-show="View.data.length>0">
+				          <span ng-disabled="View.currentPage == 1"><a class="firstBtn" ng-click="fnLinkFirst()">&rsaquo;</a>
+				          <span ng-disabled="View.currentPage == 1"><a class="prevBtn" ng-click="fnLinkPrev()">&rsaquo;</a>
+			               <span ng-repeat="page in setPage()" ng-click="fnLink(page)">
+			               		<a ng-class="(View.currentPage== page) ? 'pageNo' : ''" >{{page}}</a>
+			               </span>                        
+				          <span ng-disabled="View.currentPage >= View.data.length/View.pageSize - 1" ng-click="fnLinkNext()">&rsaquo;<a class="nextBtn"></a>
+				          <span ng-disabled="View.currentPage >= View.data.length/View.pageSize - 1" ng-click="fnLinkLast()">&rsaquo;<a class="lastBtn"></a>
+				     	</div>
+						
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+
+
+	<!-- //page button area -->
+	<div class="pagebtn_wrap ">
+		<div class="btnBox">
+			<button type="button" class="btn_effect" ng-show="View.isShowBookmark" ng-click="setBookmark('ADD')">
+				<span class="icon bmark"></span>
+				Add Bookmark
+			</button>
+			<button type="button" class="btn_effect" ng-show="View.isShowBookmark" ng-click="setBookmark('DEL')">
+				<span class="icon bmark"></span>
+				Delete Bookmark
+			</button>
+ 
+		</div>
+	</div>
+	<!-- page button area// -->
+</div>
+
+
+<!-- 도움말 팝업1// -->
+<div id="advice04" class="advice_wrap4 popupLayer" style="width: 779px; height: 500px; display: none;">
+	<h1>Ticket Status</h1>
+	<div class="advice_wrap">
+		<div class="advice_pop">
+			<table class="re_item advice">
+				<colgroup>
+					<col width="8%">
+					<col width="15%">
+					<col width="%">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><img src="/b2t/images/btsp/ico_n.gif" alt=""></td>
+						<th>New</th>
+						<td class="a_l">When a Customer/Partner creates/submits a Ticket <br />(Internal User submits on behalf of a
+							Customer/Partner → displayed as "Open")
+						</td>
+					</tr>
+					<tr>
+						<td><img src="/b2t/images/btsp/ico_o.gif" alt=""></td>
+						<th>Open</th>
+						<td class="a_l">A Queue Manager opens/confirms a new ticket</td>
+					</tr>
+					<tr>
+						<td><img src="/b2t/images/btsp/ico_a.gif" alt=""></td>
+						<th>Assigned</th>
+						<td class="a_l">A Queue Manager assigns a staff for ticket (as a Ticket Owner)</td>
+					</tr>
+					<tr>
+						<td><img src="/b2t/images/btsp/ico_i.gif" alt=""></td>
+						<th>In-Progress</th>
+						<td class="a_l">A Ticket Owner gives First Response to the Customer/Partner</td>
+					</tr>
+					<tr>
+						<td><img src="/b2t/images/btsp/ico_r.gif" alt=""></td>
+						<th>Resolved</th>
+						<td class="a_l">A Ticket Owner registers the Resolution Report</td>
+					</tr>
+					<tr>
+						<td><img src="/b2t/images/btsp/ico_c.gif" alt=""></td>
+						<th>Closed</th>
+						<td class="a_l">A Customer/Partner agrees with the Resolution</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<p class="closeBtn">
+		<a href="#" onclick="MM_showHideLayers('advice4','','hide'); "><img src="/b2t/images/btsp/btn_mo_pop_close.png"
+			alt="close"></a>
+	</p>
+</div>
+<!-- //도움말 팝업1 -->
+
+<script>
+	$(document).ready(function() {
+		$(".slider_right").hide();
+		$(".arrow").trigger("click");
+
+		$("#ticketHelp04").click(function(e) {
+			e.preventDefault();
+
+			var option = {
+				layer : "advice04",
+				closeBtn : "closeBtn",
+				modal : true,
+				closeLayer : true
+			};
+
+			popupCenterLayer(option);
+		});
+
+		$("#menuArrow").click(function() {
+			viewResizeHeader();
+
+			//$(window).trigger('resize');
+		});
+	});
+</script>
+
+
+
+<script>
+	var pageTicketNoEnc = '';
+
+	app.run(function($rootScope, $window) {
+		$rootScope.windowHeight = $window.outerHeight;
+		angular.element($window).bind('resize', function() {
+			$rootScope.windowHeight = $window.outerHeight;
+			$rootScope.$apply('windowHeight');
+		});
+
+		$rootScope.windowWidth = $window.outerWidth;
+		angular.element($window).bind('resize', function() {
+			$rootScope.windowWidth = $window.outerWidth;
+			$rootScope.$apply('windowWidth');
+		});
+	});
+
+	app.controller('ViewController', function($scope, $q, $window, $http, $element, $timeout, $rootScope, tF,  STATUS_ICON_MAP, localStorageService) {
+
+		tF.setCtx(ctx);
+
+		$scope.View = {
+			pageRole : 'STAFF',
+			last : 1,
+			columnWidth : [],
+			isShowBookmark : false,
+			data : [],
+			alignLeftFields : [ 'title', 'agentGrpId', 'siteId', 'ticketFormId' ],
+			title : "Loading...",
+			header : [],
+			isPageLoading : false,
+			dashboard : {
+				open : null,
+				resolved : null,
+				closed : null
+			},
+			SubView1 : {
+				title : "",
+				list : null,
+				viewId : null
+			},
+			SubView2 : {
+				title : "",
+				list : null,
+				viewId : null
+			},
+			isSubView1 : false,
+			isSubView2 : false,
+			formDashboard : false
+		};
+
+		
+		var Page = {
+			condition : {
+				groupNm : ""
+			},
+		};
+		
+		$scope.userId = 'rajneesh.r';
+			
+		$scope.Page = Page;
+		$scope.pageType = "...";
+
+		var statusIconMap = STATUS_ICON_MAP;
+
+		$scope.View.selectTicket = function(row) {
+			document.location.hash = "#" + $scope.View.viewId;
+			tF.goTicketPage(row, "VIEW", $scope.View.viewId);
+		};
+
+		$scope.View.selectDashTicket = function(row, viewId) {
+			tF.goTicketPage(row, "VIEW", viewId);
+		};
+
+		$scope.$watch(function() {
+			return $window.innerWidth;
+		}, function(value) {
+			resizeHeader();
+		});
+
+		$scope.$watch(function() {
+			return $window.innerHeight;
+		}, function(value) {
+			resizeListHeight();
+		});
+
+		$window.viewResizeHeader = function() {
+			$scope.$apply(function() {
+				resizeHeader();
+			});
+		};
+
+		$rootScope.$watch('windowWidth', function() {
+			resizeHeader();
+		});
+
+		$rootScope.$watch('windowHeight', function() {
+			resizeListHeight();
+		});
+
+		var resizeListHeight = function() {
+			var titleHeight = 25 + 21 + $("#viewTitle").height() + $(".table_list:first tr").height() + 10;
+			$scope.View.listHeight = $(window).height() - $(".pagebtn_wrap").outerHeight(true) - titleHeight - 100;
+		};
+
+		var resizeHeader = function() {
+			$scope.View.columnWidth = getElementsWidth();
+		};
+
+		var getElementsWidth = function() {
+			var headColumns = $(".view-head th");
+			var dataColumns = $(".viewDataRow:first td");
+			return _.map(dataColumns, function(col, idx) {
+				return ($(col).width() == 0) ? 1 : $(col).width();
+			});
+		};
+
+		$scope.$on('loadViewEvent', function(event, args) {
+			$scope.View.header = [];
+			$scope.View.title = "Loading...";
+			$scope.loadView(args);
+		});
+
+		
+		$scope.loadView = function(viewId) {
+			$(".popupLayer").remove();
+			if (viewId) {
+				localStorageService.set('lastViewId', viewId);
+				$scope.pageType = 'VIEW';
+				$scope.View.isShowBookmark = false;
+				$scope.View.fromDashboard = false;
+				$scope.View.viewId = viewId;
+				$scope.View.currentPage = 1;
+			    $scope.View.pageSize = 5;
+			    
+			  	//검색 변수 초기화
+				localStorageService.set("page", 1);
+				localStorageService.set("groupNm", "");	
+				$("#groupNm").val("");
+				
+				getTicketView();
+				resizeHeader();
+			}
+		}
+		
+		
+		$scope.loadDashboardView = function(viewId) {
+			$(".popupLayer").remove();
+			if (viewId) {
+				localStorageService.set('lastViewId', viewId);
+				$scope.pageType = 'VIEW';
+				$scope.View.isShowBookmark = false;
+				$scope.View.viewId = viewId;
+				$scope.View.currentPage = 1;
+			    	$scope.View.pageSize = 5;
+			    	$scope.View.fromDashboard = true;
+			    
+			  	//검색 변수 초기화
+				localStorageService.set("page", 1);
+				localStorageService.set("groupNm", "");	
+				$("#groupNm").val("");
+				
+				getTicketView();
+				resizeHeader();
+			}
+		}
+		
+		
+		$scope.loadViewBack = function(viewId) {
+			if (viewId) {
+				localStorageService.set('lastViewId', viewId);
+				$scope.pageType = 'VIEW';
+				$scope.View.isShowBookmark = false;
+				$scope.View.fromDashboard = false;
+				$scope.View.viewId = viewId;
+				$scope.View.currentPage = 1;
+			    $scope.View.pageSize = 5;
+				$scope.View.title = "Loading...";
+
+				getTicketView();
+				resizeHeader();
+			}
+		}
+		
+		$scope.getHeadLength = function() {
+			if ($scope.View.data.length > 0) {
+				return 20000;
+			} else if($scope.pageType == 'DASHBOARD'){
+				return $("#viewTitle").width();
+			} else{
+				return $("#viewListTitle").width();
+			}
+
+		};
+
+		var getTicketView = function() {
+
+			getSearchCondition();
+			$scope.View.isPageLoading = true;
+			
+			$http({
+				url : ctx + "/ts/ticketView.do?method=getTicketView",
+				method : "POST",
+				data : angular.element.param({
+					viewId : $scope.View.viewId,
+					fromDashboard : $scope.View.fromDashboard,
+					page : $scope.View.currentPage,
+					punit : Number(localStorageService.get("punit")),
+					groupNm : localStorageService.get("groupNm")
+				}),
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+			}).success(function(res) {	
+				
+
+				$scope.View.title = res.ticketFormView.viewNm;
+
+				$scope.View.header = _.filter(res.ticketViewResultField, function(item) {
+					return item.sortOrd > -1;
+				});
+
+				_.each($scope.View.header, function(row) {
+					if (row.fieldCd == "requesterId") {
+						row.fieldCd = "reqestorId";
+					}
+					row.propertyName = S(row.mappColumnNm.toLowerCase()).camelize().s;
+
+				});
+		
+				$scope.View.data = [];
+				$scope.View.grpMsgNm = res.ticketFormView.grpMsgNm;
+				$scope.View.headerSize = $scope.View.header.length + 4;//for grp colspan
+				$scope.View.maxPage = res.ticketViewResult.maxPage;
+				$scope.View.totalCnt =  res.ticketViewResult.totalCount;
+
+				 $scope.View.groupData = [];
+				_.map(res.ticketViewResult.groupByList, function(row) {							
+					var colNmVal = "";
+					if(res.ticketFormView.grpFieldCd == "currentOwner"){
+						res.ticketFormView.grpFieldCd = "chargerId";
+					}
+					
+					if(row[res.ticketFormView.grpFieldCd]==null || row[res.ticketFormView.grpFieldCd]==""){
+						colNmVal = "#EMPTY#";
+					}else{
+						colNmVal = row[res.ticketFormView.grpFieldCd];
+					}
+					$scope.View.groupData.push({
+						colVal : row.groupValue,
+						colNm : colNmVal
+					});
+				});
+
+				$scope.View.hasGroup = false;
+
+				if($scope.View.groupData.length>0){
+					$scope.View.hasGroup = true;
+				}
+				
+
+				_.map(res.ticketViewResult.resultList, function(row) {
+
+					grpBaseVal = "";
+					if(res.ticketFormView.grpFieldCd == "currentOwner"){
+						res.ticketFormView.grpFieldCd = "chargerId";
+					}
+					
+					if(row[res.ticketFormView.grpFieldCd]==null || row[res.ticketFormView.grpFieldCd]==""){
+						grpBaseVal = "#EMPTY#";
+					}else{
+						grpBaseVal = row[res.ticketFormView.grpFieldCd];
+					}
+					
+					$scope.View.data.push({
+						groupSeq : row.groupSeq,
+						grpBase : grpBaseVal ,
+						ticketStatusCdBase : row.ticketStatusCdBase,
+						favoriteYnBase : row.favoriteYnBase,
+						ticketNoEnc : row.ticketNoEnc,
+						reqTypeCdBase : row.reqTypeCdBase,
+						bizUnitCdBase : row.bizUnitCdBase,
+						statusIcon : statusIconMap[row.ticketStatusCdBase],
+						ticketNoBase : row.ticketNoBase,
+						totalCnt : row.totalCnt,
+						notResolvedCnt : row.notResolvedCnt,
+						resolvedCnt : row.resolvedCnt,
+						closedCnt : row.closedCnt,
+						isChecked : false,
+						cols : _.map($scope.View.header, function(col) {
+							return {
+								field : col.propertyName,
+								data : row[col.propertyName],
+								align : _.contains($scope.View.alignLeftFields, col.fieldCd) ? 'a_l' : ''
+							};
+						})
+					});
+
+				})
+
+				if ($scope.View.data.length > 0) {
+					$timeout(resizeHeader, 0);
+
+				}
+				
+				$scope.View.isPageLoading = false;
+
+			}).error(function(data, status, headers, config) {
+				if(status=="901"){
+					popSessionTimeout();
+				}
+				
+			})
+		}
+		$scope.ticketSelectAll = function() {
+			_.each($scope.View.data, function(row) {
+				row.isChecked = $scope.View.ticketSelectAll;
+			});
+			$scope.setBookmarkBtnState();
+		}
+
+		$scope.setBookmarkBtnState = function() {
+
+			if (_.isUndefined(_.find($scope.View.data, function(row) {
+				return row.isChecked == true;
+			}))) {
+				$scope.View.isShowBookmark = false;
+			} else {
+				$scope.View.isShowBookmark = true;
+			}
+		}
+
+		$scope.setBookmark = function(process) {
+
+			var checkedTickets = _.filter($scope.View.data, function(row) {
+				return row.isChecked == true;
+			});
+			var checkedTicketNoEncs = _.map(checkedTickets, function(row) {
+				return row.ticketNoEnc
+			});
+
+			var method = "";
+			if (process == "ADD") {
+				method = 'setAddFavoriteTicket';
+			} else if (process == "DEL") {
+				method = 'setRemoveFavoriteTicket';
+			}
+
+			$http({
+				url : ctx + "/ts/ticket/favoriteTicket.do?method=" + method,
+				method : "POST",
+				data : angular.element.param({
+					favorites : checkedTicketNoEncs.join()
+				}),
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+			}).success(function(res) {
+				_.each(checkedTickets, function(row) {
+					row.favoriteYnBase = (process == "ADD") ? 'Y' : 'N';
+					row.isChecked = false;
+				});
+				$scope.View.ticketSelectAll = false;
+				$scope.$emit('refreshViewStatus', "");
+				alert((process == "ADD") ? 'Bookmarked' : 'Bookmark removed');
+			});
+
+		}
+
+		$scope.refreshTicketState = function() {
+			loadTicketStatusView();
+		}
+
+		$scope.dashBoard = function() {
+			$scope.pageType = 'DASHBOARD';
+			$scope.View.header = [];
+			$scope.View.title = 'Dashboard';
+
+			$http({
+				url : ctx + "/ts/ticketView.do?method=getDashboard",
+				method : "POST",
+				data : {},
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+			}).success(function(res) {
+				if (res) {
+					$scope.View.dashboard.open = _.findWhere(res.dashboardInfoList, {
+						statusNm : 'OPEN'
+					});
+					$scope.View.dashboard.resolved = _.findWhere(res.dashboardInfoList, {
+						statusNm : 'RESOLVED'
+					});
+					$scope.View.dashboard.closed = _.findWhere(res.dashboardInfoList, {
+						statusNm : 'CLOSED'
+					});
+				}
+			});
+
+			$http({
+				url : ctx + "/ts/ticketView.do?method=getTicketViewStatusInfo",
+				method : "POST",
+				data : {},
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+			}).success(function(res) {
+
+				if (res) {
+
+					_(res.dataTicketStatus).chain().each(function(row, index) {
+						row.viewIndex = index;
+						row.dashboardNo = (row.dashboardNo == '') ? 99999 : row.dashboardNo;
+					}).sortBy(function(row) {
+						return row.viewIndex;
+					}).sortBy(function(row) {
+						return row.dashboardNo;
+					}).first(2).each(function(row, index, list) {
+
+						var pageId = null;
+						if (row.dashboardNo == 1) {
+							pageId = 1;
+						}
+						if (row.dashboardNo == 2) {
+							pageId = 2;
+						}
+
+						if (row.dashboardNo == 99999) {
+							if ($scope.View["isSubView1"] == false) {
+								pageId = 1;
+							} else {
+								pageId = 2;
+							}
+						}
+
+						$scope.View["isSubView" + pageId] = true;
+
+						$http({
+							url : ctx + "/ts/ticketView.do?method=getTicketView",
+							method : "POST",
+							data : angular.element.param({
+								viewId : row.viewId,
+								page : 1
+							}),
+							headers : {
+								'Content-Type' : 'application/x-www-form-urlencoded'
+							}
+						}).success(function(res) {
+
+							$scope.View["SubView" + pageId].title = res.ticketFormView.viewNm;
+							$scope.View["SubView" + pageId].list = _.first(res.ticketViewResult.resultList, 5);
+							$scope.View["SubView" + pageId].viewId = res.ticketViewResultSearchVO.viewId;
+						});
+
+					});
+
+				}
+			});
+
+		};
+
+
+		$("#btnExcel").click(function() {
+			var startDttm = "";
+			var endDttm = "";
+
+			if ($scope.View.data.length <= 0) {
+				alert("Not Found Data");
+				return false;
+			}
+			
+			var groupNmVal = localStorageService.get("groupNm");
+			if(groupNmVal=="#EMPTY#"){
+				groupNmVal  = "00EMPTY00";
+			}
+			var a = window.open('./ticketView.do?method=excelDownloadPage&viewId=' + $scope.View.viewId 
+					+'&startDttm='+startDttm
+					+'&endDttm='+endDttm
+					+'&viewNm='+restoreXSS($scope.View.title)
+					+'&groupNm=' +groupNmVal
+					+'&fromDashboard='+$scope.View.fromDashboard,
+					"resolutionSummary", "left=100, top=100, width=500, height=260, resizable=no");
+			a.focus();
+			return false;
+		});		
+
+		var pageInit = function() {
+
+			var requestedViewIndex = '';
+
+			if (requestedViewIndex == '') {
+				var lastViewId = localStorageService.get('lastViewId');
+
+				if (!_.isEmpty(lastViewId)) {
+					requestedViewIndex = lastViewId;
+				}
+			}
+
+			if (requestedViewIndex == '' && document.location.hash) {
+
+				var HashLocationName = document.location.hash;
+				HashLocationName = HashLocationName.replace("#/", "");
+
+				requestedViewIndex = HashLocationName;
+			}
+
+			if (requestedViewIndex) {
+				$scope.Page.currentViewId = requestedViewIndex;
+				$scope.loadViewBack(requestedViewIndex);
+
+			} else {
+
+				/* $http({
+				url : ctx + "/ts/ticketView.do?method=getTicketViewStatusInfo",
+				method : "POST",
+				data : {},
+				headers : {
+				'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+				}).success(function(res) {
+
+				$scope.Page.currentViewId = res.dataTicketStatus[0].viewId;
+				$scope.loadView(res.dataTicketStatus[0].viewId);
+				}); */
+
+				$scope.dashBoard();
+				//$scope.refreshViewStatus();
+			}
+		};
+
+		 $scope.setPage = function(){
+			 $scope.View.pages = [];
+			 $scope.View.maxPageHalf = Math.floor($scope.View.pageSize/2);
+			 $scope.View.startPage =  $scope.View.currentPage - $scope.View.maxPageHalf;	 
+
+			 if($scope.View.startPage < 1) $scope.View.startPage = 1;
+			 $scope.View.endPage = $scope.View.startPage + $scope.View.pageSize -1;
+			 if ($scope.View.endPage > $scope.View.maxPage) $scope.View.endPage = $scope.View.maxPage;
+			 
+			 for (var i = $scope.View.startPage; i <= $scope.View.endPage; i++){
+                 $scope.View.pages.push(i);
+            };
+            
+
+            return $scope.View.pages;
+		 }
+		 
+		 
+		   $scope.fnLink = function(linkPage){
+			   var pass = true;
+              
+			   if (linkPage<1){
+            	   $scope.View.currentPage = 1;
+            	   pass = false;
+               }
+               if (linkPage> $scope.View.maxPage){
+            	   $scope.View.currentPage =  $scope.View.maxPage;
+            	   pass = false;
+               }
+               if(pass){
+            	   $scope.View.currentPage = linkPage;
+               }
+
+   				localStorageService.set("page", $scope.View.currentPage);
+   				getTicketView();
+          };
+         
+          $scope.fnLinkFirst = function(){
+              $scope.fnLink(1);         
+         };
+        
+          $scope.fnLinkPrev = function(){
+              $scope.fnLink($scope.View.currentPage-1);         
+         };
+        
+         $scope.fnLinkNext = function(){
+              $scope.fnLink($scope.View.currentPage+1);
+         };
+         
+         $scope.fnLinkLast = function(){
+             $scope.fnLink($scope.View.maxPage);
+        };
+        
+		 $scope.getGroupByList = function(){
+
+		 };
+		 
+		$window.getSearchCondition = function() {
+			$scope.getSearchCondition();
+		};
+		
+		$scope.getSearchCondition = function() {
+			
+			var getPage = Number(localStorageService.get("page"));
+			var getPunit = Number(localStorageService.get("punit"));
+			var getGroupNm = localStorageService.get("groupNm");
+
+			if(getPage!=null && getPage>0){
+				$scope.View.currentPage = getPage;
+			}
+			
+			if(getPunit!=null && getPunit>0){
+				$("#punit").val(getPunit);
+			}else{
+				$("#punit").val(15);
+			}
+		
+			if(getGroupNm!=null){
+				Page.condition.groupNm = getGroupNm;
+			} 
+			
+		};
+		
+		
+		
+		$("#punit").change(function(){
+			localStorageService.set("punit", $("#punit").val());	
+			$scope.View.currentPage = 1;
+			localStorageService.set("page",1);	
+			$scope.View.title = "Loading...";
+			getTicketView();
+		});
+		
+		
+		$("#groupNm").change(function(){
+			Page.condition.groupNm = $("#groupNm").val();
+			localStorageService.set("groupNm", $("#groupNm").val());	
+			$scope.View.currentPage = 1;
+			localStorageService.set("page",1);	
+			$scope.View.title = "Loading...";
+			getTicketView();
+		});
+		
+		pageInit();
+
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta  http-equiv="Cache-Control" content="No-Cache,  no-store, must-revalidate"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+
+
+<!--//footer-->
+<!-- footer없을때 add class="none" -->
+<!-- div id="footer_wrap" class="">
+	<img src="/b2t/images/btsp/footer.gif" alt="" />
+</div -->
+<!--footer//-->
+
+
+</div>
+
+</body>
+
+</html>

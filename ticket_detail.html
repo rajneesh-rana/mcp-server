@@ -1,0 +1,3444 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<title>BTSP</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<meta  http-equiv="Cache-Control" content="No-Cache,  no-store, must-revalidate"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+<link rel="stylesheet" href="/b2t/javascript/jquery/jquery-ui-1.11.4/jquery-ui.css?v=100245">
+<link rel="stylesheet" href="/b2t/javascript/jquery/jqgrid/ui.jqgrid.css?v=94427">
+<link rel="stylesheet" href="/b2t/javascript/jquery/jui_pagination/jquery.jui_pagination.css?v=88908">
+<link rel="stylesheet" href="/b2t/javascript/jquery/multifile/jquery-filestyle.min.css?v=92914">
+<link rel="stylesheet" href="/b2t/css/jquery.mCustomScrollbar.css?v=96504"><!-- for scroll -->
+<link rel="stylesheet" href="/b2t/css/tsBasic.css?v=20250318">
+<link rel="stylesheet" href="/b2t/css/tsDefault.css?v=20240220">
+
+<script src="/b2t/javascript/util/underscore-min.js?v=87952"></script>
+<script src="/b2t/javascript/jquery/jquery-1.10.2.js?v=83492"></script>
+<script src="/b2t/javascript/jquery/jquery-ui-1.11.4/jquery-ui.js?v=97662"></script>
+<script src="/b2t/javascript/jquery/form/jquery.form.js?v=92472"></script>
+<script src="/b2t/javascript/jquery/multifile/jQuery.MultiFile.min.js?v=92529"></script>
+<script src="/b2t/javascript/jquery/multifile/jquery-filestyle.min.js?v=92913"></script>
+<script src="/b2t/javascript/jquery/monthpicker/jquery.mtz.monthpicker.js?v=94521"></script>
+<script src="/b2t/javascript/jquery/jquery-ui-1.11.4/jquery.mCustomScrollbar.concat.min.js?v=96505"></script>
+
+<script src="/b2t/javascript/util/jquery.paging.js"></script>
+<script src="/b2t/javascript/jquery/jqgrid/i18n/grid.locale-kr.js"></script>
+<script src="/b2t/javascript/jquery/jqgrid/jquery.jqGrid.src.js"></script>
+<script src="/b2t/javascript/jquery/jui_pagination/jquery.jui_pagination.js"></script>
+<script src="/b2t/javascript/jquery/jui_pagination/localization/en.js"></script>
+<script src="/b2t/javascript/jquery/blockUI/jquery.blockUI.js"></script>
+<script src="/b2t/javascript/jquery/form/autosize.min.js"></script>
+<script src="/b2t/javascript/jquery/fileDownload/fileDownload.js"></script>
+
+<script src="/b2t/javascript/util/moment-with-locales.min.js"></script>
+<script src="/b2t/javascript/util/angular-1.4.7/angular.min.js"></script>
+<script src="/b2t/javascript/util/angular-1.4.7/angular-animate.min.js"></script>
+<script src="/b2t/javascript/util/angular-1.4.7/angular-sanitize.min.js"></script>
+<script src="/b2t/javascript/util/ng-infinite-scroll.js"></script>
+<script src="/b2t/javascript/util/angular-local-storage.js"></script>
+<script src="/b2t/javascript/util/angucomplete-alt.min.js"></script>
+<script src="/b2t/javascript/util/zeroclipboard/ZeroClipboard.min.js"></script>
+
+<script src="/b2t/javascript/util/app.js?v=20200928094"></script>
+<script src="/b2t/javascript/util/directive.js?v=101530"></script>
+<script src="/b2t/javascript/util/service.js?v=20200928094"></script>
+<script src="/b2t/javascript/util/settingApp.js?v=102499"></script>
+<script src="/b2t/javascript/util/settingService.js?v=98559"></script>
+<script src="/b2t/javascript/module/b2t/ts/tsCommon.js?v=20241018"></script>
+
+<script src="/b2t/smarteditor/js/HuskyEZCreator.js?v=103359"></script>
+<!--
+<script src="/b2t/cafe/2.3.25/cafe_2.3.25.min.js"></script>
+-->
+<script type="text/javascript" src="/b2t/cafe/note/cafe_note.min.js?v=250516"></script>
+
+<!-- jquery validate -->
+<link rel="stylesheet" href="/b2t/javascript/jquery/validate/validate.css?v=103359">
+<script type="text/javascript" src="/b2t/javascript/com/addValidate.js?v=103359"></script>
+<script type="text/javascript" src="/b2t/javascript/jquery/validate/jquery.validate.js?v=103359"></script>
+
+<!-- harman bkwon81.kim add start -->
+<script src="/b2t/javascript/module/b2t/ts/tsCommon_ksp.js?v=20241008002"></script>
+<!-- harman bkwon81.kim add end -->
+
+<script>
+	var ctx = "/b2t";
+	var server ="btsp.samsunggsbn.com";
+	var port ="443";
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+	$(".topmenu_fold").click(function() {
+		$(".topmenu_spread_wrap").addClass("open");
+	});
+
+	$(".btn_spread_close").click(function() {
+		$(".topmenu_spread_wrap").removeClass("open");
+	});
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="root_wrap" ng-app="app" ng-cloak ng-controller='PageController'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta  http-equiv="Cache-Control" content="No-Cache,  no-store, must-revalidate"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+
+
+
+
+<!-- //topmenu -->
+<div class="topmenu_wrap">
+	<a href="#" class="topmenu_fold"><img
+		src="/b2t/images/btsp/icon_topmenu.png" alt="" /></a>
+	<div class="topmenu_spread_wrap">
+		<!-- 하위메뉴  열릴때 add class="open" -->
+		<h1>
+			<img src="/b2t/images/btsp/logo_top.jpg" alt="Samsung Business BTSP" />
+		</h1>
+		<button id="" class="btn_spread_close">
+			<img src="/b2t/images/btsp/btn_top_close.png" alt="close" />
+		</button>
+		<div class="topmenu">
+
+		<!--   snConversionPopUp();-->
+
+			<!-- <a href="/b2t">MobileCare</a> -->
+
+		</div>
+	</div>
+</div>
+<!-- topmenu// -->
+
+<!---------- //fixed_menu_left ---------->
+<div class="fixed_menu_left">
+	<!-- //Gnb -->
+	<div class="GnbWrap">
+		<ul>
+			<li><a href="#" onclick="goUrl(1);return false;" class="i01">Ticket</a></li>
+			<li><a href="#" onclick="goUrl(7);return false;" class="i06">Knowledge<br>Sharing</a></li>
+			
+			  
+			
+			  
+			
+			  
+			
+			  
+			
+
+			
+
+			
+				<li><a href="#" onclick="goUrl(2);return false;" class="i02">Downloads</a></li>
+				<li><a href="#" onclick="goUrl(3);return false;" class="i03" >Community</a></li>
+			
+			
+			
+				
+				
+					<li><a href="#" onclick="alert('You are not allowed to use this page');return false;" class="i04" >Market</a></li>
+				
+			
+			
+			
+
+		</ul>
+	</div>
+	<!-- Gnb// -->
+	<div class="bottWrap">
+	<!-- //spotmenu -->
+	<div class="spotmenu_wrap">
+		<a href="/b2t/main.do" class="home" data-tooltip-text="Home">home</a>
+		
+		<!-- sun.mi.lee 15.12.15 통합검색 아이콘 추가. -->
+		<!-- a href="/b2t/ts/search.do?method=searchMain" class="search" data-tooltip-text="Search" id="btnUnifiedSearch">search</a> -->
+
+		<a href="javascript:goUrl(9);" class="logout" data-tooltip-text="Logout"></a>
+	<!-- //myinfo -->
+	<div id="myinfo_wrap" class="myinfo_wrap">
+		<a href="#" class="myinfo_fold" data-tooltip-text="My Info"></a>
+		<div id="myinfoSpread" class="myinfo_spread_wrap"><!-- 하위메뉴  열릴때 add class="open" -->
+		<h1>MY INFO. <span><a href="#" onclick="goUrl(4);return false;" ><img src="/b2t/images/btsp/common/myinfo_icon.png" alt="My Profile" /></a></span></h1>
+			<a href="#" class="myinfo_arrow"><img src="/b2t/images/btsp/common/myinfo_arrow.png" alt="" /></a>
+			<button id="btnSpreadClose" class="btn_spread_close"><img src="/b2t/images/btsp/common/myinfo_close.png" alt="close" /></button>
+			<button id="btnSpreadClose" class="btn_spread_close infoClose"></button>
+			<div id ="myinformation" class="myinfomenu"></div>
+		</div>
+	</div>
+		<!-- myinfo// -->
+
+	</div>
+	<!-- spotmenu// -->
+	<!-- //setting -->
+	<div class="mainCon1">
+
+			<div class="conDiv">
+				<div id="reportDiv" class="con con1">
+					<a href="#">
+						<span class="tit"><img src="/b2t/images/btsp/common/setting_i01.png" alt=""/></span>
+						<span class="over">
+							<span class="txt1"><img src="/b2t/images/btsp/common/setting_i01_on.png" alt=""/></span>
+							<span class="txt2">Report</span>
+						</span>
+					</a>
+				</div>
+			</div>
+
+
+		<div class="conDiv">
+			<div id="settingDiv" class="con con2">
+				<a href="#">
+					<span class="tit"><img src="/b2t/images/btsp/common/setting_i02.png" alt=""/></span>
+					<span class="over">
+						<span class="txt1"><img src="/b2t/images/btsp/common/setting_i02_on.png" alt=""/></span>
+						<span class="txt2">Setting</span>
+					</span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- setting// -->
+	</div>
+</div>
+<!---------- fixed_menu_left// ---------->
+
+<script>
+
+function openPopupMessageSize(weight, height, message, func, closeModal) {
+	try { console.log("openPopupMessageHeight :" + height); } catch(e) {}
+	var html = "";
+	html += "<div id=\"popupMessage\" class=\"pop_inner_wrap no_tit\" style=\"width:"+weight+"px; height:"+height+"px; display:none;\">";
+	html += "	<div class=\"mes_wrap\">";
+	html += message;
+	html += "	</div>";
+	html += "	<div class=\"pop_inner_btn_wrap\">";
+	html += "		<button type=\"button\" class=\"confirmPopup btn_confirm\">Confirm</button>";
+	html += "	</div>";
+	html += "</div>";
+
+	$(html).appendTo("body");
+
+	try { console.log("openPopupMessageSize :" + html); } catch(e) {}
+	var option = {
+		layer:"popupMessage",
+		modal:$("#mask").is(":hidden") ? true : false,
+		confirmBtn:"confirmPopup",
+		func:func,
+		closeModal:closeModal
+	};
+
+	popupCenterLayer(option);
+}
+
+$(document).ready(function() {
+
+	var accessIdList = '[COMMON, SEC_EMP, B2T_STAFF, B2T_ADVANCED_VIEWER]';
+	
+	$("a").tooltip({
+		tooltipClass:"tooltip",
+		track:true,
+		position:{
+			my:"left top-0",
+			at:"right top"
+		},
+		show:{
+			effect:"fadeIn",
+			delay:100
+		},
+		hide:{
+			effect:"fadeOut",
+			delay:50
+		}
+	});
+	
+	var curUrl = location.href;
+	if(curUrl.indexOf("/ts/ticket") >= 0){
+		$("#btnUnifiedSearch").hide();
+	}
+
+	$(".mainCon1 .con a").each(function(q) {
+		$(this).hover(function() {
+			$(this).find(".over").stop(true, true).fadeIn('fast');
+		}, function() {
+			$(this).find(".over").stop(true, true).fadeOut('fast');
+		});
+	});
+
+	$("#reportDiv").click(function() {
+		window.location.href = '/b2t/ts/report/btspReport.do?method=ticketClosedStatusMonthly';
+	});
+
+	$("#settingDiv").click(function() {
+		
+		window.location.href = "/b2t/ts/admin/queueMgmt.do?method=queueMgmtList&menuId=N201511240335382006871_SWHQ";
+	});
+
+
+	$(".myinfo_fold").click(function() {
+		$("#myinformation").empty();
+		$.ajax({
+			type: 'get',
+			async : true,
+			url: '/b2t/login.do?method=getMyProfileInfo&menuKey=Y',
+			dataType : "json",
+			data  : null,
+			success: function(data){
+
+				var userInfo = data.jsonResult;
+				
+				if(userInfo != null){
+					var temp = "";
+					var telTemp = userInfo.attrs.TEL_NO2+"-"+userInfo.attrs.TEL_NO; 
+					var cellTemp =userInfo.attrs.TEL_NO2+"-"+userInfo.attrs.CELLPHONENO;
+
+					temp +="<ul>";
+					temp +="<li>";
+					temp +="<h3>Name</h3>";
+					temp +="<p>"+userInfo.attrs.USER_NM+"("+userInfo.attrs.USER_LOGIN_ID+")</p>";
+					temp +="</li>";
+					temp +="<li>";	
+					temp +="<h3>Phone</h3>";
+					temp +="<p>"+telTemp+"</p>";
+					temp +="</li>";
+					temp +="<li>";
+					temp +="<h3>CellPhone</h3>";
+					temp +="<p>"+cellTemp+"</p>";
+					temp +="</li>";
+					temp +="<li>";
+					temp +="<h3>E-mail</h3>";
+					temp +="<p>"+userInfo.attrs.USER_EMAIL+"</p>";
+					temp +="</li>";
+					temp +="<li>";
+					if(userInfo.attrs.SEC_EMP_YN == 'N'){
+						temp +="<h3>ACCOUNT NAME</h3><p>"+userInfo.attrs.ACCOUNT_NM+"</p>";
+					}else{
+						temp +="<h3>Subsidiary</h3><p>"+userInfo.attrs.SEC_ORG_ID+"</p>";
+					}
+					temp +="</li>";
+					temp +="<li>";
+					temp +="<h3>Country</h3>";
+					temp +="<p>"+userInfo.attrs.COUNTRY_CD+"</p>";
+					temp +="</li>";
+					temp +="</ul>";
+					
+					//팝업정보 세팅
+					$("#myinformation").html(temp);
+					//팝업오픈
+					$(".myinfo_spread_wrap").addClass("open");
+				}
+			},
+			error: function(data, status, err){
+				alert("An error occurred.");
+			}
+		});
+	
+	});
+
+	$(".btn_spread_close").click(function() {
+		$(".myinfo_spread_wrap").removeClass("open");
+	});
+
+});
+
+function goAlram() {
+	var alram = 
+		"BTSP Preventive Maintenance<br><br>" 
+		+"Please be advised that BTSP Preventive Maintenance has been scheduled as below.<br>"
+		+"The BTSP system will not be available during this time.<br>"
+		+"Preventive Maintenance time (Korean time:GMT+9)<br>"
+		+" ○ Start    :  2016/02/21(Sun)   08:00<br>"
+		+" ○ Finish  :  2016/02/21(Sun)   17:00<br><br>"
+		+"Posted by : BTSP Team";
+	openPopupMessageSize(590, 270, alram, null);
+	setTimeout('focusConfirm()', 1000);
+}
+
+function focusConfirm() {
+	$(".btn_confirm").focus();
+}
+
+
+function goLogin() {
+	//goAlram();
+	window.location.href = "/b2t/main.do?method=loginMain";
+	//window.location.href = "/b2t/index.jsp";
+}
+
+function goUrl(gubun) {
+	var url = "";
+	
+	if(4==gubun){
+		var httpPrefix = "";
+		var localDomain = "btsp.samsunggsbn.com";
+		
+		
+			httpPrefix = "https://"+ localDomain;
+		
+		
+		callUserProfilePage(httpPrefix);
+	} else{
+		if(1==gubun) {
+			url = "/b2t/ts/ticketView.do?method=page";
+			clearLastView();
+		} else if(2==gubun){
+			url = "/b2t/ts/contents/download.do?method=getDownloadSubMainPage";
+		} else if(3==gubun){	
+			url = "/b2t/ts/contents/community.do?method=getCommunitySubMainPage";
+		} else if(5==gubun) {
+			url = "/b2t/ts/contents/issue.do?method=getIssueListPage";
+		} else if(6==gubun) {
+			url = "/b2t/ts/contents/onsite.do?method=page";
+		} else if(7==gubun) {
+			//url = "/b2t/ts/contents/kedb.do?method=page";
+			url = "/b2t/ts/contents/kmdb.do?method=getKmdbNLListPage";		// 수정
+		} else if(9==gubun) {
+			url = "/b2t/login.do?method=logout";
+		}
+		
+		if(9==gubun){
+			 window.location.replace(url);
+		} else{
+			 window.location.href=url;
+		}
+	}
+}
+
+function snConversionPopup() {
+
+	//var param = "&licenseKey="+$("#detailLicense").val()+"&popup=I";
+	//var winUrl = '/b2t/mc/customization.do?method=getSNConversionPopupPage&'+param;
+	var winUrl = '/b2t/mc/deviceListManagement.do?method=getSNConversionPopupPage&';
+
+	cw=screen.availWidth;     //화면 넓이
+	ch=screen.availHeight;    //화면 높이
+	
+	sw=900;    //띄울 창의 넓이
+	sh=650;    //띄울 창의 높이
+	
+	ml=(cw-sw)/2;        //가운데 띄우기위한 창의 x위치
+	mt=(ch-sh)/2;         //가운데 띄우기위한 창의 y위치
+
+	window.open(winUrl,'win','width='+sw+',height='+sh+',top='+mt+',left='+ml+',resizable=no,scrollbars=yes');
+}
+
+//Setting
+$(function(){
+	jQuery(".mainCon1 .con a").each(function(q){
+		jQuery(this).hover(function(){
+			jQuery(this).find(".over").stop(true, true).fadeIn('fast');
+		}, function(){
+			jQuery(this).find(".over").stop(true, true).fadeOut('fast');
+		})
+	})
+})
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/b2t/javascript/jquery/multiple-select/multiple-select.css">
+<script src="/b2t/javascript/jquery/multiple-select/multiple-select.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* Resolution Report Approval 툴팁 글자수 길어지므로 padding 값을 재정의 함. 글자수를 더 늘리려면 툴팁이미지를 크게 만들어야 한다. */
+.tooltip.ui-tooltip {border:none; display:block; vertical-align:top; color:#fff; box-shadow:none; border-radius:0; margin-right:35px; margin-top:-20px; padding:4px 10px 4px 10px !important; background:url('/b2t/images/btsp/common/bg_tooltip.png') right 0 no-repeat;  white-space:nowrap; box-sizing:border-box;}
+.tooltip.ui-tooltip div {font-size:11px !important;}
+</style>
+<!----------- //creat new ticket ---------->
+<!-- 열릴때 add class="open" , 안보일때 add class="none" -->
+<div id="" class="creat_ticket_wrap close">
+	<div class="creat_ticket">
+		<span id="menuArrow" class="arrow open"></span>
+		<div class="creatWrap">
+			<div class="tl">
+				Ticket
+			</div>
+			<div class="left_btn">
+				<p>
+					<div class="advancedWrap">
+						<input type="text" class="inputTxt"  placeholder="Search Ticket ID" id="searchTicketId"  ng-keydown="$event.which === 13 && goTicketSearchByTicketId()"/>
+						<div class="searchBtn" ng-click="goTicketSearch('keyword')"></div>
+					</div>
+				</p>
+			</div>
+			<div class="left_btn">
+				<p>
+					<button type="button" class="btn_change"
+						ng-click="goTicketSearch('blank')">
+						Advanced Search
+					</button>
+				</p>
+			</div>
+			<div class="botm_btn">
+				<p>
+					<button type="button" class="btn_change" ng-click="goFavorite()">
+						My Bookmarks
+					</button>
+				</p>
+			</div>
+			
+			<div class="botm_btn" ng-if="Page.statusInfo.isNetworkUser">
+				<p>
+					<button type="button" class="btn_change" ng-click="goTask()">
+					My Task List
+					</button>
+					<span>{{Page.statusInfo.taskSize}}</span>
+				</p>
+			</div>
+			<div class="botm_btn" ng-if="Page.statusInfo.isNetworkUser">
+				<p>
+					<button type="button" class="btn_change" ng-click="goApproval()">
+						My Ticket Approval List
+					</button>
+					<span>{{Page.statusInfo.apprivalSize}}</span>
+				</p>
+			</div>
+		
+			<div class="botm_btn">
+			
+				
+				
+					<button type="button" class="btn_result" ng-click="goNewTicket('m')"><strong>Create New Ticket</strong></button>
+				
+			
+			</div>
+			<div class="viewSetWrap">
+				<div class="tl">
+					Views
+					<span class="sort" id="ticketViewSortPop"><a href="#" ng-click="ticketViewSortPop()">Create New Ticket</a></span>
+					<span class="refresh"><a href="#" ng-click="refreshViewStatus()">Refresh</a></span>
+					<span class="setting"><a href="#" ng-click="goViewSetup()">Setting</a></span>
+				</div>
+
+				<ul class="viewTextBox">
+					<li ng-repeat='view in Page.statusInfo.dataTicketStatus'
+						ng-click="callView($index)"><a href="#"
+						ng-class="{on:view.viewId==Page.currentViewId}" ng-Style="{color:(view.viewShareCd=='04')?'#7ab0f6':''}">{{view.viewNm}}<span>{{view.viewCnt}}</span></a>
+					</li>
+				</ul>
+
+					
+					<!-- 19.12.23 이계원 P 제거 요청 -->
+					<!--
+					<div class="left_btn" ng-if="Page.statusInfo.hasAuthorizationForRND">
+						<p>
+							<button type="button" class="btn_change" ng-click="goAllRndRequestList()">
+								PLM Request List
+							</button>
+						</p>
+					</div>
+					-->
+					<!-- 18.06.04 이계원 P 제거 요청 -->
+					<!-- 
+					<div class="botm_btn" ng-if="Page.statusInfo.isNetworkUser">
+						<p>
+							<button type="button" class="btn_change" ng-click="goCreateSW()">
+								SW Change Mgmt.
+							</button>
+							<span>{{Page.statusInfo.swSize}}</span>
+						</p>
+
+					</div>
+					 -->
+					<div class="botm_btn" ng-if="Page.statusInfo.isPrtUser">
+						<p>
+							<button type="button" class="btn_change" ng-click="goErrorCodeList()">
+								Error Code
+							</button>
+						</p>
+					</div>
+					<!-- 18.06.04 이계원 P 제거 요청 -->
+					
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!---------- //creat new ticket ---------->
+<!-- slider_right -->
+<!-- 없을때 add class="none" -->
+<div id="slider_right" class="slider_right">
+	<ul class="slidertext">
+		
+		<li class="i05">
+			<a href="#" id="bookmarkBtn" title="Bookmark"class="tooltip" ng-click="sliderBookmarkBtn()">
+				Bookmark
+			</a>
+		</li>
+		<!-- MOBILE : licenseKey OR MOBILE : Post-sales Support  -->
+		
+	</ul>
+</div>
+<!-- //slider_right -->
+
+<script>
+	$(document).ready(function() {
+		$("#tickets_Info1, #tickets_Info2").each(function(){
+			$(this).addClass("	ui-accordion ui-widget ui-helper-reset");
+		});
+
+		$("#tickets_Info1 > h2").each(function(index){
+			var panel = $(this).next();
+			$(this).addClass("contentHeader ui-accordion-header ui-state-default ui-corner-top ui-accordion-iconsui-accordion-header ui-state-default  ui-corner-top ui-accordion-iconsr");
+			panel.addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom");
+
+			var span = $("<span class='ui-accordion-header-icon ui-icon ui-icon-triangle-1-s'></span>");
+			span.appendTo($(this));
+			// Basic/Product/Site 모두 펼친 상태가 Default 로 수정
+			//if(index == 0){
+				$(this).addClass("ui-accordion-header-active ui-state-active");
+				panel.addClass("contentOpened");
+			//}else{
+			//	panel.hide();
+			//}
+		});
+
+		$("#tickets_Info2 > h2").each(function(index){
+			var panel = $(this).next();
+			$(this).addClass("contentHeader ui-accordion-header ui-state-default ui-corner-top ui-accordion-iconsui-accordion-header ui-state-default  ui-corner-top ui-accordion-iconsr ui-accordion-header-active ui-state-active");
+			panel.addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom");
+
+			var span = $("<span class='ui-accordion-header-icon ui-icon ui-icon-triangle-1-s'></span>");
+			span.appendTo($(this));
+		});
+
+		$(".contentHeader").click(function(){
+			var panel = $(this).next();
+			var activeHeaderClass = "ui-accordion-header-active ui-state-active";
+			if($(this).hasClass("ui-state-active")){
+				$(this).removeClass(activeHeaderClass);
+				panel.removeClass("contentOpened");
+				panel.hide();
+			}else{
+				$(this).addClass(activeHeaderClass);
+				panel.addClass("contentOpened");
+				panel.show();
+			}
+		}).mouseout(function(){
+			$(this).removeClass("ui-state-hover ");
+		}).mouseover(function(){
+			$(this).addClass("ui-state-hover ");
+		});
+
+		//세로 스크롤 컨텐츠를 위한 높이 조정
+		// - 푸터 height:43px, 하단 버튼 영역 height:100px
+		var winHeight = $(window).height();
+		$('.fl_L').css('height', winHeight - 57);
+		$('.contents_q').css('height', winHeight - 57);
+		$('.contents_c').css('height', winHeight - 57);
+		$('.fixed_ticket_left').css('height', winHeight - 57);
+		$('.spread_right').css('height', winHeight - 57);
+		$('.creat_ticket').css('height', winHeight - 57);
+		$('.creat_ticket_wrap').css('height', winHeight - 57);
+		$('.fixed_menu_left').css('height', winHeight);
+
+		$(window).resize(function() {
+			var reWinHeight = $(window).height();
+
+			$('.fl_L').css('height', reWinHeight - 57);
+			$('.contents_q').css('height', reWinHeight - 57);
+			$('.contents_c').css('height', reWinHeight - 57);
+			$('.fixed_ticket_left').css('height', reWinHeight - 57);
+			$('.spread_right').css('height', reWinHeight - 57);
+			$('.creat_ticket').css('height', reWinHeight - 57);
+			$('.creat_ticket_wrap').css('height', reWinHeight - 57);
+			$('.fixed_menu_left').css('height', reWinHeight);
+		});
+
+		$("#menuArrow").click(function() {
+			if ($(this).hasClass("open")) {
+				$(this).removeClass("open");
+				$(this).addClass("close");
+				$(".creat_ticket_wrap").removeClass("close");
+				$(".creat_ticket_wrap").addClass("open");
+				$(".contents_q.list").removeClass("close").addClass("open");
+
+			} else {
+				$(this).removeClass("close");
+				$(this).addClass("open");
+				$(".creat_ticket_wrap").removeClass("open");
+				$(".creat_ticket_wrap").addClass("close");
+				$(".contents_q.list").removeClass("open").addClass("close");
+
+			}
+		});
+
+		$("#macroSeqNo").selectmenu();
+		$("#macroSeqNo").selectmenu({
+			width : "200px",
+			position : {
+				my : "left bottom",
+				at : "left top"
+			},
+			change : function(event, ui) {
+				getTicketFormMacroValueList();
+			}
+		});
+		
+		var sessionUserId = "uDebWvoKyazD6yJN4Epp7wTAOGEETAOGEE";
+		if(sessionUserId != ""){
+			initPageViewList(sessionUserId);
+		}
+
+	});
+
+	function getTicketFormMacroValueList() {
+		if(isEmpty($("#macroSeqNo").val())) {
+			return;
+		}
+
+		$.ajax({
+			type:"post",
+			async:false,
+			url:getUrl("/ts/ticket.do?method=getTicketFormMacroValueList"),
+			dataType:"json",
+			data:{
+				seqNo:$("#macroSeqNo").val(),
+				ticketNo:$("#ticketNo").val()
+			},
+			cache:false,
+			contentType:"application/x-www-form-urlencoded;charset=utf-8",
+			beforeSend:function() {
+			},
+			complete:function() {
+			},
+			success:function(json) {
+				var result = json.result;
+				var message = json.message;
+
+				if(result == "0") {
+					var ticketFormMacroValueVOList = json.ticketFormMacroValueVOList;
+					var ticketFormMacroValueVOList2 = new Array();
+
+					$.each(ticketFormMacroValueVOList, function(index, ticketFormMacroValueVO) {
+						var fieldCd = ticketFormMacroValueVO.fieldCd;
+						var macroVal = ticketFormMacroValueVO.macroVal;
+						var macroValEtc = ticketFormMacroValueVO.macroValEtc;
+
+						//alert("fieldCd : " + fieldCd + ", macroVal : " + macroVal);//fieldCd : addCc, macroVal : UR-0133828 
+						
+
+						var field = $("#" + fieldCd);
+
+						if(field.length == 1 || checkCommonFieldYn(fieldCd)) {
+							if(fieldCd == "commentMode") {
+								if($("#commentType").length == 1) {
+									if($("button[name='commentType0']:eq(1)").is(":visible")) {
+										if(macroVal == "01") {
+											if(!$("button[name='commentType0']:eq(0)").hasClass("on")) {
+												$("button[name='commentType0']:eq(0)").trigger("click");
+											}
+										} else if(macroVal == "02") {
+											if(!$("button[name='commentType0']:eq(1)").hasClass("on")) {
+												$("button[name='commentType0']:eq(1)").trigger("click");
+											}
+										}
+									}
+								}
+							} else if(fieldCd == "ticketCommentText") {
+								
+								cafe.setContent("cafeDemo", macroVal);
+							} else if(checkMacroSetAvailable()) {
+								if(fieldCd == "addCc") {
+									if(addCc) {
+										addCc(macroVal, macroValEtc);
+									}
+								} else if(fieldCd == "addTags") {
+									$("#fullTagNm").val(macroVal);
+								} else {
+									if(fieldCd == "accountId") {
+										/* 공통에서 세팅 안함 */
+									} else if(field.hasClass("sel_block") && false) {	//FROG : selectmenu 반영시 false 삭제
+										field.val(macroVal);
+										field.selectmenu("refresh");
+									} else {
+										field.val(macroVal);
+									}
+								}
+							}
+						}
+
+						if(!checkCommonFieldYn(fieldCd)) {
+							ticketFormMacroValueVOList2.push(ticketFormMacroValueVO);
+						}
+					});
+
+					if(checkMacroSetAvailable() && setBizMacro) {
+						setBizMacro(ticketFormMacroValueVOList2);
+					}
+				} else {
+					alert(message);
+				}
+			},
+			error:function(request, status, error) {
+				alert(error);
+			}
+		});
+	}
+
+	function checkCommonFieldYn(fieldCd) {
+		if(fieldCd == "ticketCommentText" || fieldCd == "commentMode" || fieldCd == "priorityCd" || fieldCd == "addCc" || fieldCd == "addTags") {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function checkMacroSetAvailable() {
+		
+			
+			
+			
+				return false;
+			
+		
+	}
+
+	function openItemPanel(objId){
+		var panel = $("#" + objId).parent().parent().parent();
+		if(!panel.hasClass("contentOpened")){
+			panel.prev().trigger("click");
+		}
+	}
+
+	function closedPrdCreateFail(){
+		var message = "<p>Creating Mobile / VD / HA product related ticket is no longer</p>"
+			+"<p>available here.</p>"
+			+"<p>Please move to <a style=\"color:#328ede; \" href=\"https://sec-b2b.my.salesforce.com\" target=_blank><U>`Service Cloud</a>`</U></p>"
+			+"<p>&nbsp;</p>"
+			+"<p>Thanks. </p>";
+			openPopupMessageSize('430','190',message, function(){
+		});
+	}
+
+	function openPopupMessageSize(weight, height, message, func, closeModal) {
+		try { console.log("openPopupMessageHeight :" + height); } catch(e) {}
+		var html = "";
+		html += "<div id=\"popupMessage\" class=\"pop_inner_wrap no_tit\" style=\"width:"+weight+"px; height:"+height+"px; display:none; FONT-SIZE: 9pt;\">";
+		html += "	<div class=\"mes_wrap\">";
+		html += message;
+		html += "	</div>";
+		html += "	<div class=\"pop_inner_btn_wrap\">";
+		html += "		<button type=\"button\" class=\"confirmPopup btn_confirm\">Confirm</button>";
+		html += "	</div>";
+		html += "</div>";
+
+		$(html).appendTo("body");
+
+		try { console.log("openPopupMessageSize :" + html); } catch(e) {}
+
+		var option = {
+			layer:"popupMessage",
+			modal:$("#mask").is(":hidden") ? true : false,
+			confirmBtn:"confirmPopup",
+			func:func,
+			closeModal:closeModal
+		};
+
+		popupCenterLayer(option);
+	}
+</script>
+
+
+<style>
+.b2t-ui-jqgrid tr.b2t-jqgrow td {
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
+.contents_q {
+	word-wrap: normal;
+}
+
+.form-control {
+	outline: 0;
+	border-color: #ECECEC;
+	border-style: solid;
+	border-width: 1px;
+	width: 100%;
+	background-color: #ffffff;
+	padding: 6px;
+	border-radius: 2px;
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+
+.angucomplete-holder {
+	position: relative;
+}
+
+.angucomplete-dropdown {
+	border-color: #ececec;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 2px;
+	width: 250px;
+	padding: 6px;
+	cursor: pointer;
+	z-index: 9999;
+	position: absolute;
+	/*top: 32px;
+    left: 0px;
+    */
+	margin-top: -6px;
+	background-color: #ffffff;
+}
+
+.angucomplete-searching {
+	color: #acacac;
+	font-size: 14px;
+}
+
+.angucomplete-description {
+	font-size: 14px;
+}
+
+.angucomplete-row {
+	padding: 5px;
+	color: #000000;
+	margin-bottom: 4px;
+}
+
+.angucomplete-selected-row, .angucomplete-row:hover {
+	background-color: lightblue;
+	color: #ffffff;
+}
+
+.angucomplete-image-holder {
+	padding-top: 2px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 5px;
+}
+
+.angucomplete-image {
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	border-color: #ececec;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.angucomplete-image-default {
+	background-position: center;
+	background-size: contain;
+	height: 34px;
+	width: 34px;
+}
+
+#ex1_dropdown {
+	overflow-y: auto;
+	max-height: 150px;
+	width: 215px;
+}
+
+.sel_block{border-radius:3px}
+.ms-parent {border-radius:3px}
+
+.searchItemTitle {margin:2px 0 2px 0; }
+.searchItemTitle label {color:#666; font-size:13px; font-weight:bold; }
+.leftCol{position : absolute;left:0px;width:48%;height:20px}
+.rightCol{position : absolute;right:5px;width:48%;height:20px}
+.dual {height:22px;margin-top:10px}
+
+.Product_Type1 { padding:20px 15px 23px 20px;}
+</style>
+<script>
+	var jqGridSortId = "";
+	var jqGridSortOrd = "";
+
+	var serviceEntryPoint = "/b2t/ts/ticketSearch.do?method=";
+	var dataFormat = "MM/dd/yyyy";
+	var serverSideTotalRecords = 0;
+	var localData = [];
+	var formId = "searchListFrom";
+	var serviceId = "getTicketSearchList";
+
+	$(document).ready(function() {
+
+	initPageUnitOption();
+
+		$("#punitSelect").on('change', function() {
+			callJqGridListService(serviceEntryPoint, "grid1", formId, serviceId, true);
+		});
+
+	initPager(serviceEntryPoint, "jqGridPager", "grid1", formId, serviceId);
+
+	initGrid();
+
+
+
+	resizeJqGridWidth();
+
+	});
+
+	function initGrid() {
+		$("#grid1").jqGrid('GridUnload');
+
+		var params = $("#searchListFrom").serialize();
+		var initBizUnitCd= "G3";
+		var initSearchYn = "N";
+		var colNames = [];
+		colNames.push("Ticket ID");
+		colNames.push("Subsidiary");
+		colNames.push("Status");
+		colNames.push("Subject");
+		colNames.push("Requester");
+		colNames.push("Country");
+		colNames.push("Request Type");
+		
+		if(initSearchYn=="N") {
+			$("#rSearchDtType01").prop("disabled", true);
+			$("#rSearchDtType02").prop("disabled", true);
+			$("#dtWithin").prop("disabled", true);				
+			$("#dtStart").prop("disabled", true);
+			$("#dtEnd").prop("disabled", true);
+			dateSearchYn.value = "N";
+		} else {
+			$("#rSearchDtType01").prop("disabled", false);
+			$("#rSearchDtType02").prop("disabled", false);
+			$("#dtWithin").prop("disabled", false);
+			$("#dtStart").prop("disabled", false);
+			$("#dtEnd").prop("disabled", false);
+			dateSearchYn.value = "Y";
+		}
+		
+		if(initBizUnitCd == "G3"){
+			colNames.push("System Type");
+		} else{
+			colNames.push("Model");
+		}
+		
+		colNames.push("Current Owner");
+		colNames.push("Submitted");
+	
+		colNames.push("");
+
+		var colModel = [];
+		colModel.push({
+			name : 'ticketNo',
+			index : 'TICKET_NO',
+			width : '70',
+			formatter : editFormatter,
+			sortable : false,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'secorgId',
+			index : 'SECORG_ID',
+			width : '80',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'ticketStatusNm',
+			index : 'TICKET_STATUS_CD',
+			width : '60',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'title',
+			index : 'TITLE',
+			width : '',
+			formatter : editFormatterTitle,
+			sortable : false,
+			align : 'left'
+
+		});
+		colModel.push({
+			name : 'requesterId',
+			index : 'REQUESTER_ID',
+			width : '80',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'countryCd',
+			index : 'COUNTRY_CD',
+			width : '80',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'reqTypeNm',
+			index : 'REQ_TYPE_NM',
+			width : '80',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'userDefine1',
+			index : 'USER_DEFINE1',
+			width : '80',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'currentOwner',
+			index : 'CURRENT_OWNER',
+			width : '80',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'searchDttm',
+			index : 'SEARCH_DTTM',
+			width : '100',
+			formatter : nullFormatter,
+			sortable : true,
+			align : 'center'
+		});
+		colModel.push({
+			name : 'ticketIdEnc',
+			index : 'ticketIdEnc',
+			width : setJqGridColByPercentage(10),
+			formatter : nullFormatter,
+			sortable : false,
+			align : 'center',
+			hidden : true
+		});
+
+		$("#grid1").jqGrid({
+			datatype : "local",
+			height : "auto",
+			rowNum : 1000,
+			autowidth : true,
+			shrinkToFit : true,
+			loadonce : false,
+			colNames : colNames,
+			colModel : colModel,
+			jsonReader : {
+				repeatitems : false
+			},
+			footerrow : false,
+			beforeProcessing : function(data) {
+				localData = data.rows;
+				jsonError(data);
+			},
+			loadError: function (jqXHR, textStatus, errorThrown) {
+				if(jqXHR.status =="901"){
+					popSessionTimeout();
+				}
+			},
+			loadComplete : function() {
+
+				var dataType = jQuery("#grid1").jqGrid('getGridParam', "datatype");
+				var pageSize = $("#punit").val();
+				var totalPages = Math.ceil(Number(serverSideTotalRecords) / Number(pageSize));
+
+				if (dataType == "local" && totalPages != 0) {
+					setGridAround("jqGridPager", totalPages, serverSideTotalRecords);
+				} else if (dataType == "json") {
+					serverSideTotalRecords = $("#grid1").jqGrid("getGridParam", "records");
+
+					if (serverSideTotalRecords == 0) {
+						showNoData($("#grid1"));
+						showJqGridPager("jqGridPager", false);
+						$("#totalSpan").html(0);
+					} else if (serverSideTotalRecords == 1) {
+						var goticket = "";
+						var dataList = $('#grid1').getRowData();
+						for( var i = 0; i < dataList.length; i++ ){
+						     var str = dataList[i].ticketNo;
+						     var pos1 = str.indexOf('(');
+							 var pos2 = str.indexOf(')');
+							 goticket = str.substring(pos1+2, pos2-1);
+							 //console.log("str="+str+", pos1="+pos1+", pos2="+pos2+", goticket="+goticket);						     
+						}
+						
+						saveSearchCondition();						
+						selectTicket(goticket);
+					} else {
+						totalPages = Math.ceil(Number(serverSideTotalRecords) / Number(pageSize));
+						setGridAround("jqGridPager", totalPages, serverSideTotalRecords);
+						$("#jqGridPager").jui_pagination("setOption", "currentPage", $("#page").val(), true);
+						saveSearchCondition();
+					}
+				}
+
+				setJqGridSortingHandler();
+
+			},
+			onSortCol : function(index, columnIndex, sortOrder) {
+				$("#sidx").val(index);
+				$("#sort").val(sortOrder);
+				callJqGridListService(serviceEntryPoint, "grid1", formId, serviceId, true);
+			}
+		});
+		
+		
+		$('body').on('click','button[name=btnSrchOptAndAdd]', function() {
+				var searchBoxCnt = $('#srchOptAndArea div.searchBox').length+1;
+				if(searchBoxCnt > 3){
+					var msg = "Up to 3 options can be searched.";
+					openPopupMessage(msg,function(){
+					}, true);
+				}else{
+			
+					var cloneHtml = '';
+					cloneHtml += '<div id="dynamicSrchOptAnd'+searchBoxCnt+'" name="dynamicSrchOpt">';
+					cloneHtml += '	<select  id="searchFieldAnd'+searchBoxCnt+'" name="searchFieldAnd'+searchBoxCnt+'" class="sel_block" style="width:130px;right:0px;top:5px">';
+					$("#searchFieldAnd1 option").each(function() {
+						if($(this).val() != "desc") {
+							cloneHtml += '<option value="'+$(this).val()+'">'+$(this).text()+'</option>';
+						}
+					});
+					
+					cloneHtml += '	</select>';
+					cloneHtml += '	<div class="timeBox inline">'
+					cloneHtml += '		<span class="btn_minusPlus">';
+					cloneHtml += '			<button id="btnSrchOptAndAdd'+searchBoxCnt+'" name="btnSrchOptAndAdd" class="btn_plus" type="button">+</button>';
+					cloneHtml += '			<button id="btnSrchOptAndDel'+searchBoxCnt+'" name="btnSrchOptAndDel" class="btn_minus" type="button">-</button>';
+					cloneHtml += '		</span>';
+					cloneHtml += '	</div>';
+					cloneHtml += '	<div class="searchBox" style="margin-bottom: 10px;">';
+					cloneHtml += '		<input type="text" id="searchDataAnd'+searchBoxCnt+'" name="searchDataAnd'+searchBoxCnt+'" class="form" onkeypress="eventSearch();" />';
+					cloneHtml += '	</div>';
+					cloneHtml += '</div>';
+					$("#srchOptAndArea").append(cloneHtml);
+				}
+			
+		});
+		
+	}
+	
+	
+	$('body').on('click','button[name=btnSrchOptAndDel]', function() {
+		// 2번째를 지우고 3번째만 남기는 경우
+		// 3번째를 2번째로 id, name를 변경한다. 
+		var targetId = ($(this).parent().parent().parent().attr("id"));
+		//console.log("targetId="+targetId);
+		//console.log("searchDataAnd3 length="+$("#searchDataAnd3").length);
+		$(this).parent().parent().parent().remove();
+		if(targetId == "dynamicSrchOptAnd2" && $("#dynamicSrchOptAnd3").length > 0){
+			$("#searchFieldAnd3").attr("name", "searchFieldAnd2");
+			$("#searchFieldAnd3").attr("id", "searchFieldAnd2");
+			$("#searchDataAnd3").attr("name", "searchDataAnd2");
+			$("#searchDataAnd3").attr("id", "searchDataAnd2");
+		}
+	});
+	
+	function eventSearch(){
+		if(event.keyCode==13){
+			$("#searchBtn").trigger("click");
+		}
+	}
+
+	function editFormatter(collvalue, options, rowObject) {
+		var rtnStr = "<a href='#' onclick=\"selectTicket('" + rowObject.ticketNoEnc + "')\" >" + rowObject.ticketNo + "</a>";
+		return rtnStr;
+	}
+
+	function editFormatterTitle(collvalue, options, rowObject) {
+		var rtnStr = "<a href='#' onclick=\"selectTicket('" + rowObject.ticketNoEnc + "')\" >" + rowObject.title + "</a>";
+		return rtnStr;
+	}
+
+	function setJqGridSortingHandler() {
+		$(".b2t-ui-jqgrid-htable").find(".b2t-ui-jqgrid-not-sortable").parent().css("cursor", "default");
+		$(".b2t-ui-jqgrid-htable").find(".b2t-ui-jqgrid-not-sortable").css("cursor", "default");
+
+		$(".b2t-ui-jqgrid-sortable").on('click', function() {
+			var i = $(this).children(":first").find('span:first').attr('class').indexOf('ui-state-disabled');
+
+			jqGridSortId = $(this).attr("id");
+			jqGridSortOrd = "";
+
+			$(".b2t-ui-jqgrid-sortable").find('img').attr('src', '/b2t/images/btsp/common/icon_solt.png');
+
+			if (i > 0) {
+				$(this).find('img').attr('src', '/b2t/images/btsp/common/icon_down_sort_arrow.png');
+				jqGridSortOrd = "desc";
+			} else {
+				$(this).find('img').attr('src', '/b2t/images/btsp/common/icon_up_sort_arrow.png');
+				jqGridSortOrd = "asc";
+			}
+		});
+
+		if (!isEmpty(jqGridSortId)) {
+			if (jqGridSortOrd == "desc") {
+				$("#" + jqGridSortId).find('img').attr('src', '/b2t/images/btsp/common/icon_down_sort_arrow.png');
+			} else {
+				$("#" + jqGridSortId).find('img').attr('src', '/b2t/images/btsp/common/icon_up_sort_arrow.png');
+			}
+		}
+
+		setTimeout(function() {
+			$("#progressLoadingBar").remove();
+		}, 100);
+
+	}
+</script>
+<!---------- //fixed_ticket_left ---------->
+<div ng-controller='SearchController'>
+	<div class="fixed_ticket_left"><!-- ng-controller='SearchController'-->
+		<!-- 없을경우 add class="none" -->
+		<!-- // ticket info -->
+		<form id="searchListFrom" name="searchListFrom">
+			<input type="hidden" ng-value="Page.condition.page" id="page" name="page" value="1" />
+			<input type="hidden" ng-value="Page.condition.punit" id="punit" name="punit" value="15" />
+			<input type="hidden" ng-value="Page.condition.sidx" id="sidx" name="sidx" value="1" />
+			<input type="hidden" ng-value="Page.condition.sort" id="sort" name="sort" value="asc" />
+			<input type="hidden" ng-value="Page.condition.txtSearchField" name="txtSearchField" />
+			<input type="hidden" ng-value="Page.condition.txtSearchData" name="txtSearchData" id="txtSearchData" />
+			<input type="hidden" ng-value="Page.condition.bizUnitCd" name="bizUnitCd" />
+			<input type="hidden" ng-value="Page.condition.reqTypeCd" name="reqTypeCd" />
+			<input type="hidden" ng-value="Page.condition.ticketStatusCd" name="ticketStatusCd" />
+			<input type="hidden"  id="secorgId" name="secorgId" />
+			<input type="hidden"  id="ticketStatusCds" name="ticketStatusCds" />
+			<input type="hidden"  id="countryCds" name="countryCds" />
+			<input type="hidden"  id="accountIds" name="accountIds" />
+			<input type="hidden"  id="searchDtType" name="searchDtType" />
+			<input type="hidden"  id="searchSubCounType" name="searchSubCounType" />
+			<input type="hidden"  id="dateSearchYn" name="dateSearchYn" value="Y" />
+			<input type="hidden" ng-value="Page.condition.selectedCountry" name="countryCd" />
+			<input type="hidden" ng-value="Page.condition.range" name="range" />
+			<input type="hidden" ng-value="Page.condition.dtStart" name="dtStart" />
+			<input type="hidden" ng-value="Page.condition.dtEnd" name="dtEnd" />
+		<div class="tickets_wrap">
+			<h2 class="ticketLeft_title">
+				Ticket
+			</h2>
+
+			<div class="Product_Type1">
+				<div class="box" style="border-top:0px">
+					<h4>
+						Product Group
+					</h4>
+					<div class="col mb9">
+						<select id="conBizUnitCd" ng-model="Page.condition.bizUnitCd" ng-change="bizChange()" class="sel_block" >
+							<option value="">-- Select --</option>
+							
+							<option value="G3">System Network</option>
+							
+						</select>
+					</div>
+					<h4>
+						Search Option
+					</h4>
+					<div class="col mb9"  id="srchOptAndArea">
+						<div>
+							<select ng-model="Page.condition.txtSearchField" ng-change="optChange()" id="searchFieldAnd1" class="sel_block" style="width:130px;right:0px;top:5px"><!-- position:absolute; -->
+								<option ng-repeat="option in Page.textItem.txtSearchList" value="{{option.fieldId}}">{{option.fieldName}}</option>
+							</select>
+							<div class="timeBox inline">
+								<span class="btn_minusPlus">
+									<button id="btnSrchOptAndAdd1" name="btnSrchOptAndAdd" class="btn_plus" type="button">+</button>
+								</span>
+							</div>
+							<div class="searchBox" style="margin-bottom: 10px;" >
+								<input type="text" id="searchDataInput"class="form" ng-model="Page.condition.txtSearchData"  ng-keyup="searchByKeyup()" ng-keydown="$event.which === 13 && searchByKeydown()"/>
+							</div>
+						</div>
+					</div>
+		</form>
+					<h4>
+						Request Type
+					</h4>
+					<div class="col mb9">
+						<select ng-model="Page.condition.reqTypeCd" class="sel_block">
+							<option value="">-- Select --</option>
+							<option ng-repeat="option in Page.item.reqTypeList" value="{{option.cdId}}">{{option.displayContent}}</option>
+						</select>
+					</div>
+					<h4>
+						Status
+					</h4>
+					<div class="col mb9">
+						<select id="ticketStatusCdMulti" name="ticketStatusCdMulti" multiple="multiple">
+							
+								
+							
+								
+									<option value="10">New</option>
+								
+							
+								
+									<option value="20">Open</option>
+								
+							
+								
+									<option value="30">Assigned</option>
+								
+							
+								
+									<option value="40">In-progress</option>
+								
+							
+								
+									<option value="50">Resolved</option>
+								
+							
+								
+									<option value="60">Closed</option>
+								
+							
+						</select>
+					</div>
+					
+					<div  class="col dual" >
+						<div class="searchItemTitle leftCol">
+							<input type="radio"  name="rSearchSubCounType"  value="S" ng-click="showSelectList('S')"  id="rSearchSubCounType01"  style="margin-left:-3px"><label for="rSearchSubCounType01">Subsidiary</label> 
+						</div>
+						<div class="searchItemTitle rightCol">
+							<input type="radio" name="rSearchSubCounType" value="A" ng-click="showSelectList('A')"  id="rSearchSubCounType02" ><label for="rSearchSubCounType02">Operator</label>
+						</div>
+					</div>
+
+					<div class="col mb9 "  ng-show="Page.searchSubCounType=='S'">
+						<select id="secorgIdMulti" name="secorgIdMulti" multiple="multiple" >
+							
+								
+									
+										
+											
+												
+													
+														<optgroup label="HQ">
+													
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEHQ">SEHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="AFRICA">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="AFHQ">AFHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="LAGOS">LAGOS</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="NAIROBI">NAIROBI</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SCA">SCA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SSA">SSA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="CHINA">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="CHHQ">CHHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SCIC">SCIC</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEHK">SEHK</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SET">SET</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="CIS">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="CISHQ">CISHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEAO">SEAO</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECC">SECC</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECE">SECE</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECE-K">SECE-K</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECE-O">SECE-O</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SER">SER</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SERC">SERC</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SETO">SETO</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEU">SEU</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEUC">SEUC</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="EUROPE">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="EUHQ">EUHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEACE">SEACE</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEAD">SEAD</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEAS">SEAS</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEB">SEB</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEBN">SEBN</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECZ">SECZ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEF">SEF</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEG">SEG</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEGR">SEGR</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEH">SEH</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEI">SEI</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEIB">SEIB</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SELS">SELS</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SENA">SENA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEPOL">SEPOL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEROM">SEROM</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEUK">SEUK</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="JAPAN">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="JAPAN">JAPAN</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEJ">SEJ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="KOREA ">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+								
+									
+										
+											
+											
+												<option value="GLOBAL">GLOBAL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="KOREA">KOREA</option>
+											
+										
+										
+									
+								
+									
+								
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="LATIN AMERICA">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="LAHQ">LAHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="LIMA">LIMA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SAMCOL">SAMCOL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEASA">SEASA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECH">SECH</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEDA">SEDA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SELA-M">SELA-M</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SELA-P">SELA-P</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEM">SEM</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEPR">SEPR</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="MIDDLE EAST">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="MENAHQ">MENAHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="ALGIERS">ALGIERS</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="IRAN">IRAN</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SAUDIARABIA">SAUDIARABIA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SDLS">SDLS</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEEG">SEEG</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEIL">SEIL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SELV">SELV</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEMAG">SEMAG</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEPAK">SEPAK</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SETK">SETK</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SGE">SGE</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="NORTH AMERICA">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="NAHQ">NAHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEA">SEA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SECA">SECA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="STA">STA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="S.E.ASIA">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SAHQ">SAHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SAHQ-DIR">SAHQ-DIR</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SAPL">SAPL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SAVINA">SAVINA</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEAU">SEAU</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEHC">SEHC</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEIN">SEIN</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SENZ">SENZ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEPCO">SEPCO</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEV">SEV</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SEVT">SEVT</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SME">SME</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="TSE">TSE</option>
+											
+										
+										
+									
+								
+									
+										
+											
+												
+													
+													
+														</optgroup>
+														<optgroup label="S.W.ASIA">
+													
+												
+											
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SWHQ">SWHQ</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="BANGLADESH">BANGLADESH</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="NEPAL">NEPAL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SIEL">SIEL</option>
+											
+										
+										
+									
+								
+									
+										
+											
+											
+												<option value="SRILANKA">SRILANKA</option>
+											
+										
+										
+											</optgroup>
+										
+									
+								
+							
+						</select> 
+					</div>		
+								
+					<div class="col mb9"  ng-show="Page.searchSubCounType=='A'">
+						<select id="accountIdMulti" name="accountIdMulti" multiple="multiple">
+							
+								<option value="201605230742514541920000000000981247">3IRL </option>
+							
+								<option value="794AD581-9F37-4C91-A012-AE97272B3192">3UK</option>
+							
+								<option value="201405081516432090860000000000220228">AT&T</option>
+							
+								<option value="202007070745539695970000000001049375">AT&T Mexico</option>
+							
+								<option value="202212131204250000000000000001050172">Airtel</option>
+							
+								<option value="202103300105103280250000000001049720">Altan</option>
+							
+								<option value="202204151015000000000000000001050001">B2B-Japan</option>
+							
+								<option value="202210251145000000000000000001050001">B2B-Korea</option>
+							
+								<option value="202107070617490801340000000001049865">B2B-USA</option>
+							
+								<option value="202206270901000000000000000001050001">DISH</option>
+							
+								<option value="201606240553392002650000000000988431">Docomo</option>
+							
+								<option value="202505220101000000000000000000000001">ESN</option>
+							
+								<option value="202001140731054438830000000001049141">Fastweb</option>
+							
+								<option value="201505061121314029220000000000635970">Jio</option>
+							
+								<option value="201307310511060738250000000000083321">KDDI</option>
+							
+								<option value="201312200040188364080000000000159011">KT</option>
+							
+								<option value="201512111537355621830000000000945397">LGU+</option>
+							
+								<option value="202208011141510000000000000001050152">MSO-USA</option>
+							
+								<option value="93D62ADC-4B22-48AA-A75C-21A01FAAE736">MTS</option>
+							
+								<option value="201401241145383849190000000000167188">Mobicom</option>
+							
+								<option value="201905210841168707660000000001047883">Orange</option>
+							
+								<option value="201911130502037378380000000001048991">Pre-Sales Trial</option>
+							
+								<option value="202106010141332714790000000001049822">Pre-Sales(SNE)</option>
+							
+								<option value="202203041445000000000000000001050001">Quality Engineering</option>
+							
+								<option value="202511201440000000000000000000000038">Rakuten</option>
+							
+								<option value="201511230924226259940000000000936629">SKT</option>
+							
+								<option value="201603171808121508420000000000966881">SaskTel</option>
+							
+								<option value="201411251353468836380000000000503775">SoftBank</option>
+							
+								<option value="202006120204594709320000000001049342">Spark</option>
+							
+								<option value="201405241025464013890000000001103403">Sprint</option>
+							
+								<option value="202009242356177325120000000001049481">TELUS</option>
+							
+								<option value="202402291155000000000000000001050001">TMO</option>
+							
+								<option value="202402021526230000000000000000000037">Telefonica DE</option>
+							
+								<option value="201304221119233989260000000000052970">Test account</option>
+							
+								<option value="202409130901000000000000000001050001">UKTL</option>
+							
+								<option value="201601180400362252550000000000950882">UQ</option>
+							
+								<option value="202201201121213488730000000001050001">USCC</option>
+							
+								<option value="201405241024587378780000000001079504">Verizon</option>
+							
+								<option value="202412161528000000000000000001050054">Vi</option>
+							
+								<option value="7A0925A5-0EA1-42A2-AE4F-2A26261E663D">Videotron</option>
+							
+								<option value="202203021311000000000000000001050001">Viettel</option>
+							
+								<option value="202409260953230000000000000001050053">Vodafone DE</option>
+							
+								<option value="202310051428200000000000000001050192">Vodafone RO</option>
+							
+								<option value="202111170740452388080000000001050053">Vodafone UK</option>
+							
+								<option value="201304030805100147990000000000048796">YTL</option>
+							
+						</select>
+					</div>		
+					
+					<div class="col dual" >
+						<div class="searchItemTitle leftCol">
+							<input type="radio" name="rSearchDtType" id="rSearchDtType01" value="C" ng-click="selectSearchDtType('C')"  style="margin-left:-3px" ><label for="rSearchDtType01">Submitted</label> 
+						</div>
+						<div class="searchItemTitle rightCol">
+							<input type="radio" name="rSearchDtType" id="rSearchDtType02" value="U" ng-click="selectSearchDtType('U')" ><label for="rSearchDtType02">Last Updated</label>
+						</div>
+					</div>
+					<div class="col">
+						<h4 style="padding-bottom:5px">Date within</h4>
+						<select id="dtWithin" ng-model="Page.condition.range" ng-change="changeRange()" class="sel_block"  style="width:150px;position:absolute;right:0px;top:5px">
+							<option ng-repeat="option in Page.rangeItem" value="{{option.fieldId}}">{{option.fieldName}}</option>
+						</select>
+						<p ng-show="Page.isCustomRange" style="margin-top: 5px">
+							<input id="dtStart" type="text" class="form mb4" style="width: 45%" ng-model="Page.condition.dtStart">
+							~
+							<input id="dtEnd" type="text" class="form mb4" style="width: 45%" ng-model="Page.condition.dtEnd">
+						</p>
+					</div>
+				</div>
+				<!-- //button area -->
+				<div class="leftbtn_wrap">
+					<div class="btnBox">
+						<button ng-click="search();$event.stopPropagation();" id="searchBtn" class="btn_ok" type="button">Search</button>
+					</div>
+				</div>
+				<!-- button area// -->
+			</div>
+
+		</div>
+		<!-- ticket info // -->
+	</div>
+	<!----------fixed_ticket_left// ---------->
+
+
+	<div class="contents_q pr0">
+
+		<!-- //start -->
+		<div class="fl_L ">
+
+			<div class="tl_2">
+				Advanced Search
+			</div>
+
+			<div class="resultBox">
+				<div class="s_ti">
+					<span id="totalSpan">0</span> results (※ up to 10,000 rows)
+				</div>
+				<div class="sel">
+					<select id="punitSelect" name="punitSelect" class="sel_block"></select>
+				</div>
+				<div class="sel" style="margin-right: 20px">
+					<button ng-click="excelDownload()" class="btn_ok" type="button">Extract To Excel</button>
+				</div>
+			</div>
+			
+			<div>
+				<div id="gridDiv" class="grid_table">
+					<table id="grid1"></table>
+				</div>
+				<div class="pagingwrap" id="jqGridPager"></div>
+			</div>
+			
+		</div>
+		<!-- //end -->
+
+	</div>
+</div>
+<!-- //page button area -->
+
+<div class="pagebtn_wrap ">
+	<div class="btnBox"></div>
+</div>
+<!-- page button area// -->
+<script>
+	$(document).ready(function() {
+		$(".slider_right").hide();
+
+		$('#secorgIdMulti').change(function() {
+			$('#secorgId').val($(this).val());
+		}).multipleSelect({
+			width : '100%',
+			displayValues : true
+		});
+
+		$("#secorgIdMulti").multipleSelect("checkAll");
+		
+		$('#ticketStatusCdMulti').change(function() {
+			$('#ticketStatusCds').val($(this).val());
+		}).multipleSelect({
+			width : '100%'
+		});
+		$("#ticketStatusCdMulti").multipleSelect("checkAll");
+		
+		$('#accountIdMulti').change(function() {
+			$('#accountIds').val($(this).val());
+		}).multipleSelect({
+			width : '100%'
+		});
+		$("#accountIdMulti").multipleSelect("checkAll");
+		
+	});
+
+	var dateFormat = "MM/dd/yyyy";
+	$("#dtStart").datepicker({
+		changeMonth : true,
+		changeYear : true,
+		dateFormat : datepickerFormat(dateFormat)
+	});
+
+	$("#dtEnd").datepicker({
+		changeMonth : true,
+		changeYear : true,
+		dateFormat : datepickerFormat(dateFormat)
+	});
+
+	$("#dtStart,#dtEnd").focusout(function() {
+		$(this).checkDateFormat(dateFormat);
+	});
+
+	//angular.element($('#page')).triggerHandler('input');
+	var technologyField = {fieldId : "productCtgry1Nm", fieldName : "Technology"};
+	var systemTypeField = {fieldId : "productCtgry2Nm", fieldName : "System Type"};
+	var systemField = {fieldId : "productCtgry3Nm", fieldName : "System"};
+	var systemImpactField = {fieldId : "sysImpactNm", fieldName : "System Impact"};
+	var issueCtgryField = {fieldId : "issueCtgryCd", fieldName : "Issue Category"};
+	var softwareVerField = {fieldId : "softwareVer", fieldName : "Software Version"};
+	var customerTicketField = {fieldId : "customerTicketId", fieldName : "Customer Ticket ID"};
+	var tagField = {fieldId : "tagNm", fieldName : "Tag"};
+	var accountField = {fieldId : "accoutNm", fieldName : "Account Name"};
+	var modelCdField =  {fieldId : "modelCd", fieldName : "Model"};	
+	var initSearchField = "ticketId";
+	if(initSearchField == null || initSearchField == '' ){
+		initSearchField = "ticketId";
+	}
+	
+	app.controller('SearchController', function($scope, $rootScope, $http, tF, $window, STATUS_ICON_MAP, localStorageService, $q, $timeout) {
+		tF.setCtx(ctx);
+		var Page = {
+			item : {},
+			storageKey : 'searchInfo',
+			textItem : {
+				txtSearchList : [ {
+					fieldId : "",
+					fieldName : '-- Select --'
+				}, {
+					fieldId : "ticketId",
+					fieldName : "Ticket ID"
+				}, {
+					fieldId : "title",
+					fieldName : "Subject"
+				}, {
+					fieldId : "ticketOwner",
+					fieldName : "Current Owner"
+				}, {
+					fieldId : "requesterNm",
+					fieldName : "Requester"
+				}, {
+					fieldId : "submitterNm",
+					fieldName : "Submitter"
+				}, {
+					fieldId : "desc",
+					fieldName : "Description"
+				}
+				]
+			},
+			rangeItem : [ {
+				fieldId : "1",
+				fieldName : "1 day"
+			},{
+				fieldId : "7",
+				fieldName : "1 week"
+			},{
+				fieldId : "30",
+				fieldName : "1 month"
+			},{
+				fieldId : "180",
+				fieldName : "6 months"
+			},{
+				fieldId : "365",
+				fieldName : "1 year"
+			},{
+				fieldId : "thisYear",
+				fieldName : "This year"
+			},{
+				fieldId : "lastYear",
+				fieldName : "Last year"
+			}, {
+				fieldId : "custom",
+				fieldName : "Custom range"
+			} ],
+			reqTypeItem : {},
+			condition : {
+				bizUnitCd  : "G3",
+				reqTypeCd  : "",
+				txtSearchField : initSearchField,
+				txtSearchData : "TS26501G",
+				searchFieldOr1 : initSearchField,
+				range : "365",
+				dtStart : "06/20/2026",
+				dtEnd : "06/20/2026",
+				page : "1",
+				punit : "15",
+				sidx : "SBMT_DTTM",
+				sort : "desc"
+			},
+			isCustomRange : false
+		};
+		$scope.Page = Page;
+
+		$window.selectTicket = function(ticketNoEnc) {
+
+			tF.goTicketPage({
+				ticketNoEnc : ticketNoEnc
+			}, "SEARCH", '');
+		};
+
+		$scope.bizChange = function() {
+			var bizUnitCdCnt  = '1';
+			if(Page.condition.bizUnitCd == 'G4'){
+				$("#rSearchSubCounType02").prop("disabled", true);
+				Page.searchSubCounType = "S";
+				$("#rSearchSubCounType01").prop("checked", true);
+				$("#searchSubCounType").val("S");
+			}else{
+				$("#rSearchSubCounType02").prop("disabled", false);
+			}
+			if (Page.condition.bizUnitCd != "") {
+				callReqType();
+				/* search option 초기화 */
+				 $( 'div' ).remove( '[name=dynamicSrchOpt]' );
+
+				if(Page.condition.bizUnitCd == 'G3'){
+					removeSearchField();
+					if(bizUnitCdCnt != 1){
+						addSearchField(technologyField);
+						addSearchField(systemTypeField);
+						addSearchField(systemField);
+						addSearchField(systemImpactField);
+						addSearchField(issueCtgryField);
+						addSearchField(softwareVerField);					
+						addSearchField(customerTicketField);
+						addSearchField(tagField);
+					}	
+				} else{ 
+					removeSearchField();
+					if(bizUnitCdCnt != 1){
+						addSearchField(tagField);
+						addSearchField(accountField);
+						addSearchField(modelCdField);
+					}	
+				}
+				
+			} else {
+				Page.item.reqTypeList = [];
+				Page.condition.reqTypeCd = "";
+				removeSearchField();
+				if(bizUnitCdCnt != 1){
+					addSearchField(technologyField);
+					addSearchField(systemTypeField);
+					addSearchField(systemField);
+					addSearchField(systemImpactField);
+					addSearchField(issueCtgryField);
+					addSearchField(softwareVerField);					
+					addSearchField(customerTicketField);
+					addSearchField(tagField);
+					addSearchField(accountField);
+					addSearchField(modelCdField);
+				}
+			}
+		};		
+		
+		$scope.optChange = function() {
+			if($("#searchFieldAnd1").val() == "ticketId") {			
+				if(Page.condition.txtSearchData.length>=8) {
+					$("#rSearchDtType01").prop("disabled", true);
+					$("#rSearchDtType02").prop("disabled", true);
+					$("#dtWithin").prop("disabled", true);				
+					$("#dtStart").prop("disabled", true);
+					$("#dtEnd").prop("disabled", true);
+					dateSearchYn.value = "N";
+				} else {
+					$("#rSearchDtType01").prop("disabled", false);
+					$("#rSearchDtType02").prop("disabled", false);
+					$("#dtWithin").prop("disabled", false);
+					$("#dtStart").prop("disabled", false);
+					$("#dtEnd").prop("disabled", false);
+					dateSearchYn.value = "Y";
+				}
+			} else {
+				$("#rSearchDtType01").prop("disabled", false);
+				$("#rSearchDtType02").prop("disabled", false);
+				$("#dtWithin").prop("disabled", false);
+				$("#dtStart").prop("disabled", false);
+				$("#dtEnd").prop("disabled", false);
+				dateSearchYn.value = "Y";
+			}
+		};		
+		
+		$scope.showSelectList = function(searchType){
+			$("#searchSubCounType").val(searchType);
+			Page.searchSubCounType = searchType;
+		};
+		$scope.selectSearchDtType = function(searchType){
+			$("#searchDtType").val(searchType);
+		};
+
+		var callReqType = function(reqTypeCd) {
+			return $http({
+				url : ctx + "/ts/common.do?method=getReqTypeList",
+				method : "POST",
+				dataType : "json",
+				data : angular.element.param({
+					bizUnitCd : Page.condition.bizUnitCd,
+					ptrMgr : "M"
+				}),
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+			}).success(function(data) {
+			
+				Page.item.reqTypeList = data.reqTypeVOList;
+				if (reqTypeCd) {
+					Page.condition.reqTypeCd = reqTypeCd;
+				} else {
+					Page.condition.reqTypeCd = '';
+				}
+
+			}).error(function(res) {
+				alert(res);
+			});
+		};
+		
+		var addSearchField = function(fieldItem){
+			//removeSearchField();
+			$scope.Page.textItem.txtSearchList.push(fieldItem);
+		};
+		
+		var changeGridHeader = function(bizUnitCd){
+			if(bizUnitCd == "G3"){
+				removeSearchField();
+				addSearchField(technologyField);
+				addSearchField(systemTypeField);
+				addSearchField(systemField);
+				addSearchField(systemImpactField);
+				addSearchField(issueCtgryField);
+				addSearchField(softwareVerField);					
+				addSearchField(customerTicketField);
+				addSearchField(tagField);
+				jQuery("#grid1").jqGrid("setLabel", "userDefine1", "System Type");
+			} else if(bizUnitCd == "G4"){
+				removeSearchField();
+				addSearchField(tagField);
+				addSearchField(accountField);
+				addSearchField(modelCdField);
+				jQuery("#grid1").jqGrid("setLabel", "userDefine1", "Model");
+			}
+		}
+		
+		var removeSearchField = function(){
+			var bizUnitCdCnt  = '1';
+			//var bizUnitCdLen = Page.item.bizUnitCdList.length;
+			//if(bizUnitCdLen != 1){
+				
+			if(bizUnitCdCnt != 1){
+				// 
+				if (Page.condition.txtSearchField == "customerTicketId" || Page.condition.txtSearchField == "modelCd" ) {
+					Page.condition.txtSearchField = "title";
+				}
+				
+				
+				//bizUnitCdCnt 변경될때 마다 무의미하게 하나씩 없어진다. 그래서 주석한다.
+				var itemLen = $scope.Page.textItem.txtSearchList.length;
+				if(itemLen == 10){
+					$scope.Page.textItem.txtSearchList.splice(7, 3);
+				}
+				else if(itemLen == 15){
+					$scope.Page.textItem.txtSearchList.splice(7, 8);
+				}
+				else{
+					$scope.Page.textItem.txtSearchList.splice(7, 10);
+				}
+			}
+		};
+
+		$scope.countries = [];
+
+		$scope.clearCountryInput = function() {
+			$scope.$broadcast('angucomplete-alt:clearInput', 'ex1');
+		};
+
+		$scope.countrySelected = function(selected) {
+			if (selected) {
+				$scope.disableCountry = true;
+				Page.condition.selectedCountry = selected.originalObject.code;
+			} else {
+				$scope.disableCountry = false;
+				Page.condition.selectedCountry = null;
+			}
+		};
+		$scope.disableCountry = false;
+
+		$scope.changeRange = function() {
+			Page.isCustomRange = (Page.condition.range == "custom");
+		};
+
+		$scope.userId = 'rajneesh.r';
+
+		$window.saveSearchCondition = function() {
+			$scope.saveSearchCondition();
+		};
+
+		$scope.saveSearchCondition = function() {
+			localStorageService.remove($scope.Page.storageKey);
+			Page.condition.page = $("#page").val();
+			Page.condition.punit = $("#punit").val();
+			Page.condition.sidx = $("#sidx").val();
+			Page.condition.sort = $("#sort").val();
+			Page.condition.ticketStatusCds = $("#ticketStatusCds").val();
+			Page.condition.searchSubCounType = $("#searchSubCounType").val();
+			Page.condition.searchDtType = $("#searchDtType").val();
+			Page.condition.accountIds = $("#accountIds").val();
+			Page.condition.secorgId = $("#secorgId").val();
+
+			var storageData = {
+				userId : $scope.userId,
+				condition : $scope.Page.condition,
+				updateDate : Math.floor(Date.now() / 1000)
+
+			};
+			localStorageService.set($scope.Page.storageKey, storageData);
+		};
+
+		$scope.search = function() {
+			if(($("#searchFieldAnd1").val() != "ticketId" && $("#conBizUnitCd").val() == "") || ($("#searchFieldAnd1").val() == "ticketId" && Page.condition.txtSearchData == "" && $("#conBizUnitCd").val() == "")){
+				var msg = '{0} is required';
+				var fieldNm ='Product Group';
+				msg = getMessage(msg, [fieldNm]);
+				openPopupMessage(msg, function(){	
+				});
+				return false;
+			}
+			/* 
+			if(Page.condition.range == "custom"){
+				var  btDay = calDiffFromToDt();
+				if(btDay > 365){
+					openPopupMessage("A period is possible to maximum 1 year.", function() {});
+					return;
+				}
+			}
+			*/
+			if($("#searchDtType").val() == "C"){
+				jQuery("#grid1").jqGrid("setLabel", "searchDttm", "Submitted");
+			} else{
+				jQuery("#grid1").jqGrid("setLabel", "searchDttm", "Last Updated");
+			}
+			
+			changeGridHeader(Page.condition.bizUnitCd);
+			
+			$window.callJqGridListService(serviceEntryPoint, "grid1", formId, serviceId, true);
+		};
+		
+		$scope.searchByKeydown = function() {
+			if((Page.condition.txtSearchData == "")){
+				var msg = '{0} is required';
+				var fieldNm ='Search Option';
+				var fieldVal = $("#searchFieldAnd1 option:selected").val();
+				if(fieldVal.length > 0 ){
+					fieldNm = $("#searchFieldAnd1 option:selected").text();
+				}
+				msg = getMessage(msg, [fieldNm]);
+				openPopupMessage(msg, function(){
+				});
+				return false;
+			}
+			/* 
+			if(Page.condition.range == "custom"){
+				var  btDay = calDiffFromToDt();
+				if(btDay > 365){
+					openPopupMessage("A period is possible to maximum 1 year.", function() {});
+					return;
+				}
+			}
+			*/
+			$scope.search();
+		};
+		
+		$scope.searchByKeyup = function() {
+			if($("#searchFieldAnd1").val() == "ticketId") {			
+				if(Page.condition.txtSearchData.length>=8) {
+					$("#rSearchDtType01").prop("disabled", true);
+					$("#rSearchDtType02").prop("disabled", true);
+					$("#dtWithin").prop("disabled", true);				
+					$("#dtStart").prop("disabled", true);
+					$("#dtEnd").prop("disabled", true);
+					dateSearchYn.value = "N";
+				} else {
+					$("#rSearchDtType01").prop("disabled", false);
+					$("#rSearchDtType02").prop("disabled", false);
+					$("#dtWithin").prop("disabled", false);
+					$("#dtStart").prop("disabled", false);
+					$("#dtEnd").prop("disabled", false);
+					dateSearchYn.value = "Y";
+				}
+			}
+		};		
+		
+		/* 
+		$scope.excelDownloadOld = function() {
+			$('#searchListFrom').attr({
+				'action' : ctx + "/ts/ticketSearch.do?method=excelExportSearchList",
+				'method' : 'post'
+			}).submit();
+			return false;
+		}
+		*/
+
+		$scope.excelDownload = function() {
+			
+			if(navigator.userAgent.toLowerCase().indexOf("msie")!= -1 || navigator.userAgent.indexOf("rv:11.0") > -1){ // 브라우져가 IE인 경우
+				//IE9
+				var height = 237;
+			}else{
+				//chrome
+				var height = 243;
+			}
+	
+			if(($("#searchFieldAnd1").val() != "ticketId" && $("#conBizUnitCd").val() == "") || ($("#searchFieldAnd1").val() == "ticketId" && $("#searchDataInput").val() == ""  && $("#conBizUnitCd").val() == "")){
+				var msg = '{0} is required';
+				var fieldNm ='Product Group';
+				msg = getMessage(msg, [fieldNm]);
+				openPopupMessage(msg, function(){
+				});
+				return false;
+			}
+			
+			/*
+			if(Page.condition.range == "custom"){
+				var  btDay = calDiffFromToDt();
+				if(btDay > 365){
+					openPopupMessage("A period is possible to maximum 1 year.", function() {});
+					return;
+				}
+			}
+			*/
+			
+			var a = window.open('./ticketSearch.do?method=excelDownloadPage', "resolutionSummary", "left=100, top=100, width=450, height="+height+", resizable=no");
+			a.focus();
+
+			return false;
+		};
+
+		var pageLoad = function() {
+			changeGridHeader(Page.condition.bizUnitCd);
+			var caller = '';
+			$http({
+				url : ctx + "/ts/ticketSearch.do?method=getSearchItem",
+				method : "POST",
+				data : angular.element.param({
+					bizUnitCd : Page.condition.bizUnitCd
+				}),
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
+			}).success(function(res) {
+				$scope.countries = _.chain(res.countryCdList).sortBy('displayContent').each(function(row) {
+					row.displayContent = '(' + row.cdId + ') ' + row.displayContent;
+				}).map(function(row) {
+					return {
+						name : row.displayContent,
+						code : row.cdId
+					};
+				}).value();
+
+				Page.item = res;
+				var bizUnitCdCnt  = '1';
+				if(bizUnitCdCnt == 1){
+					/*
+					if(bizUnitList[0].cdId == 'G3'){
+						addSearchField(customerTicketField);	
+					}else{ 
+						addSearchField(modelCdField);
+					}*/
+					//changeGridHeader(bizUnitList[0].cdId);
+					//Page.condition.bizUnitCd =bizUnitList[0].cdId;
+					
+					var caller = '';
+					var defer = $q.defer();
+					if(caller){
+						if (!_.isEmpty(Page.condition.bizUnitCd)) {
+							var searchInfo = localStorageService.get($scope.Page.storageKey);
+							callReqType(searchInfo.condition.reqTypeCd).then(function() {
+								defer.resolve();
+							});
+						} else {
+							defer.resolve();
+						}
+					}else {
+						callReqType();
+					}
+				}
+
+			}).error(function(res) {
+
+				alert(res);
+			})
+
+			.then(function() {
+				if (caller) {
+					var defer = $q.defer();
+					var searchInfo = localStorageService.get($scope.Page.storageKey);
+
+					if (!_.isEmpty(searchInfo) && searchInfo.userId == $scope.userId) {
+						$scope.Page.condition = searchInfo.condition;
+
+						Page.condition.page = searchInfo.condition.page;
+						Page.condition.punit = searchInfo.condition.punit;
+						Page.condition.sidx = searchInfo.condition.sidx;
+						Page.condition.sort = (searchInfo.condition.sort == 'asc') ? 'asc' : 'desc';
+						
+						Page.condition.searchSubCounType = searchInfo.condition.searchSubCounType;
+						if(!Page.condition.searchSubCounType || Page.condition.searchSubCounType == ""){
+							Page.searchSubCounType = "S";
+							$("input[name=rSearchSubCounType][value=S]").prop('checked', true);
+							$("#searchSubCounType").val("S");
+						} else{
+							Page.searchSubCounType = Page.condition.searchSubCounType;
+							$("input[name=rSearchSubCounType][value=" + Page.condition.searchSubCounType +"]").prop('checked', true);
+							$("#searchSubCounType").val(Page.condition.searchSubCounType);
+						}
+						
+						Page.condition.searchDtType = searchInfo.condition.searchDtType;
+						if(!Page.condition.searchDtType || Page.condition.searchDtType == ""){
+							$("input[name=rSearchDtType][value=C]").prop('checked', true);
+							$("#searchDtType").val("C");
+							jQuery("#grid1").jqGrid("setLabel", "searchDttm", "Submitted");
+						} else{
+							$("input[name=rSearchDtType][value=" + Page.condition.searchDtType +"]").prop('checked', true);
+							$("#searchDtType").val(Page.condition.searchDtType);
+							if(Page.condition.searchDtType == "C"){
+								jQuery("#grid1").jqGrid("setLabel", "searchDttm", "Submitted");
+							} else{
+								jQuery("#grid1").jqGrid("setLabel", "searchDttm", "Last Updated");
+							}
+						}
+						
+						changeGridHeader(searchInfo.condition.bizUnitCd);
+						
+						Page.condition.secorgId = searchInfo.condition.secorgId;
+						if(Page.condition.secorgId){
+							$("#secorgIdMulti").multipleSelect("setSelects",Page.condition.secorgId.split(','));
+						}
+						
+						Page.condition.ticketStatusCds = searchInfo.condition.ticketStatusCds;
+						if(Page.condition.ticketStatusCds){
+							$("#ticketStatusCdMulti").multipleSelect("setSelects",Page.condition.ticketStatusCds.split(','));
+						}
+						
+						Page.condition.accountIds = searchInfo.condition.accountIds;
+						if(Page.condition.accountIds){
+							$("#accountIdMulti").multipleSelect("setSelects",Page.condition.accountIds.split(','));
+						}
+
+						$("#punitSelect").val(Page.condition.punit);
+
+						if (Page.condition.txtSearchField == "") {
+							Page.condition.txtSearchField = "title";
+						}
+
+						if (Page.condition.range == 'custom') {
+							Page.isCustomRange = true;
+						}
+
+						if (Page.condition.selectedCountry != "") {
+
+							var country = _.findWhere($scope.countries, {
+								code : Page.condition.selectedCountry
+							});
+
+							Page.condition.countryCd = Page.condition.selectedCountry;
+
+							if (country) {
+								$scope.$broadcast('angucomplete-alt:changeInput', 'ex1', country);
+							}
+						}
+
+						if (!_.isEmpty(Page.condition.bizUnitCd)) {
+							callReqType(searchInfo.condition.reqTypeCd).then(function() {
+								defer.resolve();
+							});
+
+						} else {
+							defer.resolve();
+						}
+
+					} else {
+						defer.resolve();
+					}
+					return defer.promise;
+				} else{
+					Page.searchSubCounType = "S";
+					$("#rSearchSubCounType01").prop("checked", true);
+					$("#searchSubCounType").val("S");
+					if($("#conBizUnitCd").val() == "G4"){
+						$("#rSearchSubCounType02").prop("disabled", true);
+					}
+					
+					$("#rSearchDtType01").prop("checked", true);
+					$("#searchDtType").val("C");
+					
+				}
+			}).then(function() {
+
+				if (caller) {
+
+					jQuery("#grid1").jqGrid('setGridParam', {
+						postData : angular.element.param(Page.condition)
+					});
+					jQuery("#grid1").jqGrid('setGridParam', {
+						datatype : "json"
+					});
+					jQuery("#grid1").jqGrid('setGridParam', {
+						mtype : "POST"
+					});
+					jQuery("#grid1").jqGrid('setGridParam', {
+						url : serviceEntryPoint.concat(serviceId)
+					}).trigger("reloadGrid");
+				} else {
+					//$scope.search();
+					
+						
+						$timeout(function() {
+							angular.element('#searchBtn').trigger('click');
+						}, 100);
+						
+						
+					
+				}
+
+			});
+		};
+
+		pageLoad();
+
+	});
+	
+	function calDiffFromToDt(){
+		var dateFormat = "MM/dd/yyyy";
+		var delimiter = ".";
+		if(dateFormat.indexOf("-") > 0){
+			delimiter = "-";
+		} else if(dateFormat.indexOf("/") > 0 ){
+			delimiter = "/";
+		}
+		var frmDate = stringToDate($("#dtStart").val(),dateFormat,delimiter); 
+		var toDate = stringToDate($("#dtEnd").val(),dateFormat,delimiter); 
+		var btMs = toDate.getTime() - frmDate.getTime() ;
+		var btDay = btMs / (1000*60*60*24) ;
+		return btDay;
+	}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta  http-equiv="Cache-Control" content="No-Cache,  no-store, must-revalidate"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+
+
+
+<!--//footer-->
+<!-- footer없을때 add class="none" -->
+<!-- div id="footer_wrap" class="">
+	<img src="/b2t/images/btsp/footer.gif" alt="" />
+</div -->
+<!--footer//-->
+
+
+</div>
+
+</body>
+
+</html>
