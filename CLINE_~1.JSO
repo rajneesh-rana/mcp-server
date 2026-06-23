@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "btsp": {
+      "command": "python",
+      "args": ["/path/to/btsp_mcp/server.py"],
+      "env": {
+        "BTSP_SESSION": "JSESSIONID=<paste_your_session_id_here>"
+      }
+    }
+  }
+}
+
+// ─── HOW TO GET YOUR JSESSIONID ───────────────────────────────────────────────
+//
+// 1. Log in to https://btsp.samsunggsbn.com in Chrome (complete MFA as normal)
+//
+// 2. Open DevTools: F12  →  Application tab  →  Storage  →  Cookies
+//    →  https://btsp.samsunggsbn.com
+//
+// 3. Find the row named "JSESSIONID", copy its Value column
+//
+// 4. Paste it above:  "BTSP_SESSION": "JSESSIONID=<paste here>"
+//
+// 5. In VS Code: Ctrl+Shift+P → "Cline: Open MCP Settings" → merge the above
+//
+// ─── WHERE TO PUT THIS FILE ───────────────────────────────────────────────────
+//
+// The actual settings file Cline reads is:
+//   %APPDATA%\Code\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json
+//
+// Add the "btsp" block inside the existing "mcpServers" object.
+//
+// ─── REFRESHING THE SESSION ───────────────────────────────────────────────────
+//
+// Session typically lasts 8-24 hours. When it expires, Cline will show:
+//   🔐 Authentication error: BTSP session has expired...
+//
+// Just repeat steps 1-4 above to paste a fresh JSESSIONID.
